@@ -35,6 +35,39 @@ public class SSEntityDescGetPar extends SSServPar{
   public Boolean  getThumb          = false;
   public Boolean  getFlags          = false;
     
+  public static SSEntityDescGetPar get(
+    final SSServPar      par,
+    final SSUri          entity,
+    final Boolean        getTags,
+    final Boolean        getOverallRating,
+    final Boolean        getDiscs,
+    final Boolean        getUEs,
+    final Boolean        getThumb,
+    final Boolean        getFlags) throws Exception{
+    
+    return new SSEntityDescGetPar(par, entity, getTags, getOverallRating, getDiscs, getUEs, getThumb, getFlags);
+  }
+  private SSEntityDescGetPar(
+    final SSServPar      par,
+    final SSUri          entity,
+    final Boolean        getTags,
+    final Boolean        getOverallRating,
+    final Boolean        getDiscs,
+    final Boolean        getUEs,
+    final Boolean        getThumb,
+    final Boolean        getFlags) throws Exception{
+    
+    super(par);
+    
+    this.getTags = getTags;
+    this.getOverallRating = getOverallRating;
+    this.getDiscs = getDiscs;
+    this.getUEs = getUEs;
+    this.getThumb = getThumb;
+    this.getFlags = getFlags;
+    this.entity = entity;
+  }
+  
   public SSEntityDescGetPar(SSServPar par) throws Exception{
       
     super(par);

@@ -54,6 +54,7 @@ public enum SSMethU{
   entitiesForDescriptionsGet,
   entityPublicSet,
   entityDescGet                                       ,
+  entityDescsGet,
   entityAdd                                           ,
   entityAddAtCreationTime                             ,
   entityGet                                           ,

@@ -31,7 +31,6 @@ import at.kc.tugraz.ss.serv.serv.caller.SSServCaller;
 import at.kc.tugraz.ss.serv.test.api.SSServOpTestCaseA;
 import at.kc.tugraz.ss.serv.voc.serv.SSVoc;
 
-
 public class SSEntityDescGetTest extends SSServOpTestCaseA{
   
   public SSEntityDescGetTest(final SSEntityConf entityConf){
@@ -48,6 +47,9 @@ public class SSEntityDescGetTest extends SSServOpTestCaseA{
       SSVoc.systemUserUri,
       true, 
       true, 
+      true, 
+      true,
+      true,
       true);
     
     SSLogU.info("end " + op + " Test");
@@ -66,6 +68,9 @@ public class SSEntityDescGetTest extends SSServOpTestCaseA{
       serverServPar.entity,
       true, 
       true, 
+      true,
+      true,
+      true,
       true);
     
     createJSONClientRetStr(SSEntityDescGetRet.get(serverServResult, op));

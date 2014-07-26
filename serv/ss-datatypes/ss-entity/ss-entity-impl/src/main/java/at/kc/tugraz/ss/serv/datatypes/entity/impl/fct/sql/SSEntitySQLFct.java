@@ -115,6 +115,45 @@ public class SSEntitySQLFct extends SSDBSQLFct{
     }
   }
   
+  public List<SSUri> getEntities(
+    final SSUri           user,
+    final List<SSEntityE> types) throws Exception{
+    
+    final List<SSUri> entities = new ArrayList<>();
+    
+    for(SSEntityE type : types){
+      entities.addAll(getEntities(user, type));
+    }
+    
+    SSStrU.distinctWithoutNull2(entities);
+    
+    return entities;
+  }
+  
+  public List<SSUri> getEntities(
+    final SSUri     author,
+    final SSEntityE type) throws Exception{
+    
+    ResultSet resultSet = null;
+    
+    try{
+      
+      final Map<String, String> where = new HashMap<>();
+      
+      where(where, SSSQLVarU.author, author);
+      where(where, SSSQLVarU.type,   type);
+      
+      resultSet = dbSQL.select(entityTable, where);
+      
+      return getURIsFromResult(resultSet, SSSQLVarU.id);
+    }catch(Exception error){
+      SSServErrReg.regErrThrow(error);
+      return null;
+    }finally{
+      dbSQL.closeStmt(resultSet);
+    }
+  }
+  
   public SSEntity getEntity(
     final SSLabel   label,
     final SSEntityE type) throws Exception{
