@@ -61,7 +61,7 @@ import java.util.*;
 
 public class SSTagImpl extends SSServImplWithDBA implements SSTagClientI, SSTagServerI, SSEntityHandlerImplI, SSEntityDescriberI{
   
-  private final SSTagSQLFct   sqlFct;
+  private final SSTagSQLFct sqlFct;
   
   public SSTagImpl(final SSConfA conf, final SSDBGraphI dbGraph, final SSDBSQLI dbSQL) throws Exception{
     
