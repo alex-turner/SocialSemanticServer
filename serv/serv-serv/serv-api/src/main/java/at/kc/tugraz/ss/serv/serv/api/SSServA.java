@@ -21,12 +21,15 @@
 package at.kc.tugraz.ss.serv.serv.api;
 
 import at.kc.tugraz.socialserver.utils.SSMethU;
+import at.kc.tugraz.socialserver.utils.SSStrU;
 import at.kc.tugraz.socialserver.utils.SSVarU;
 import at.kc.tugraz.ss.adapter.socket.datatypes.SSSocketCon;
 import at.kc.tugraz.ss.conf.api.SSCoreConfA;
 import at.kc.tugraz.ss.datatypes.datatypes.enums.SSEntityE;
 import at.kc.tugraz.ss.serv.datatypes.SSServPar;
 import at.kc.tugraz.ss.serv.datatypes.SSServRetI;
+import at.kc.tugraz.ss.serv.datatypes.err.SSErr;
+import at.kc.tugraz.ss.serv.datatypes.err.SSErrE;
 import at.kc.tugraz.ss.serv.err.reg.SSServErrReg;
 import at.kc.tugraz.ss.serv.serv.datatypes.err.SSClientServForOpNotAvailableOnMachineErr;
 import at.kc.tugraz.ss.serv.serv.datatypes.err.SSClientServForOpNotAvailableOnNodesErr;
@@ -40,17 +43,83 @@ import java.util.Map;
 
 public abstract class SSServA{
 
-  public    static final String                          policyFile                    = "<policy-file-request/>";
-  public                 SSConfA                         servConf                      = null;
-  protected        final Class                           servImplClientInteraceClass;
-  protected        final Class                           servImplServerInteraceClass;
-  protected              Exception                       servImplCreationError         = null;
-  private   static final Map<SSMethU, SSServA>           servs                         = new EnumMap<>(SSMethU.class);
-  private   static final Map<SSMethU, SSServA>           servsForClientOps             = new EnumMap<>(SSMethU.class);
-  private   static final Map<SSMethU, SSServA>           servsForServerOps             = new EnumMap<>(SSMethU.class);
-  private   static final Map<SSEntityE, SSServA>         servsForManagingEntities      = new EnumMap<>(SSEntityE.class);
-  private   static final List<SSServA>                   servsForDescribingEntities    = new ArrayList<>();
- 
+  public    static final String                                       policyFile                      = "<policy-file-request/>";
+  public                 SSConfA                                      servConf                        = null;
+  protected        final Class                                        servImplClientInteraceClass;
+  protected        final Class                                        servImplServerInteraceClass;
+  protected              Exception                                    servImplCreationError           = null;
+  private   static final Map<SSMethU, SSServA>                        servs                           = new EnumMap<>(SSMethU.class);
+  private   static final Map<SSMethU, SSServA>                        servsForClientOps               = new EnumMap<>(SSMethU.class);
+  private   static final Map<SSMethU, SSServA>                        servsForServerOps               = new EnumMap<>(SSMethU.class);
+  private   static final Map<SSEntityE, SSServA>                      servsForManagingEntities        = new EnumMap<>(SSEntityE.class);
+  private   static final List<SSServA>                                servsForDescribingEntities      = new ArrayList<>();
+  protected static final Map<SSMethU, Integer>                        maxRequsForClientOpsPerUser     = new HashMap<>();
+  private   static final Map<SSMethU, Map<String, List<SSServImplA>>> actualRequsForClientOpsForUser  = new HashMap<>();
+  
+  private static void addClientRequ(
+    final SSMethU     op,
+    final String      user,
+    final SSServImplA servImpl) throws Exception{
+    
+    if(servImpl instanceof SSServImplWithDBA){
+      
+      if(((SSServImplWithDBA)servImpl).dbSQL.getActive() > ((SSServImplWithDBA)servImpl).dbSQL.getMaxActive() - 30){
+        throw new SSErr(SSErrE.maxNumDBConsReached);
+      }
+    }
+    
+    if(!maxRequsForClientOpsPerUser.containsKey(op)){
+      return;
+    }
+    
+    Map<String, List<SSServImplA>> servImplsForUser;
+    List<SSServImplA>              servImpls;
+      
+    synchronized(actualRequsForClientOpsForUser){
+      
+      if(!actualRequsForClientOpsForUser.containsKey(op)){
+        
+        servImplsForUser = new HashMap<>();
+        servImpls        = new ArrayList<>();
+        
+        servImplsForUser.put(user, servImpls);
+        
+        actualRequsForClientOpsForUser.put(op, servImplsForUser);
+      }else{
+        
+        servImpls = actualRequsForClientOpsForUser.get(op).get(user);
+        
+        if(servImpls.size() == maxRequsForClientOpsPerUser.get(op)){
+          throw new SSErr(SSErrE.maxNumClientConsForOpReached);
+        }
+      }
+      
+      servImpls.add(servImpl);
+    }
+  }
+  
+  public static void removeClientRequ(
+    final SSMethU     op,
+    final String      user,
+    final SSServImplA servImpl) throws Exception{
+
+    if(!maxRequsForClientOpsPerUser.containsKey(op)){
+      return;
+    }
+    
+    synchronized(actualRequsForClientOpsForUser){
+      
+      if(
+        !actualRequsForClientOpsForUser.containsKey(op) ||
+        actualRequsForClientOpsForUser.get(op).isEmpty() ||
+        actualRequsForClientOpsForUser.get(op).get(user).isEmpty()){
+        return;
+      }
+      
+      actualRequsForClientOpsForUser.get(op).get(user).remove(servImpl);
+    }
+  }
+  
   protected SSServA(
     final Class servImplClientInteraceClass, 
     final Class servImplServerInteraceClass){
@@ -265,12 +334,15 @@ public abstract class SSServA{
       
       try{
         
-        final SSServA serv = getClientServAvailableOnMachine(parA);
-        
-        serv.serv().handleClientOp(serv.servImplClientInteraceClass, sSCon, parA);
+        final SSServA     serv     = getClientServAvailableOnMachine(parA);
+        final SSServImplA servImpl = serv.serv();
+
+        addClientRequ(parA.op, SSStrU.toStr(parA.user), servImpl);
+       
+        servImpl.handleClientOp(serv.servImplClientInteraceClass, sSCon, parA);
         
       }catch(SSClientServForOpNotAvailableOnMachineErr error){
-
+        
         if(useCloud){
           
           deployServNode(

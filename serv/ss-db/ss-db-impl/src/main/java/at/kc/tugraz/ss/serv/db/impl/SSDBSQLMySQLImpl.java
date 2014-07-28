@@ -58,6 +58,16 @@ public class SSDBSQLMySQLImpl extends SSServImplDBA implements SSDBSQLI{
   }
   
   @Override
+  public Integer getActive() throws Exception{
+    return connectionPool.getActive();
+  }
+  
+  @Override 
+  public Integer getMaxActive() throws Exception {
+    return connectionPool.getMaxActive();
+  }
+  
+  @Override
   public ResultSet select(
     final String table) throws Exception{
     return connector.prepareStatement("SELECT * FROM " + table).executeQuery();

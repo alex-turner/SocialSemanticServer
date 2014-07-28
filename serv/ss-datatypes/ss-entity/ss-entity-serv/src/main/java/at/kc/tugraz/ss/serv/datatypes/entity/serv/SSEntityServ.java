@@ -20,6 +20,7 @@
 */
 package at.kc.tugraz.ss.serv.datatypes.entity.serv;
 
+import at.kc.tugraz.socialserver.utils.SSMethU;
 import at.kc.tugraz.ss.conf.api.SSCoreConfA;
 import at.kc.tugraz.ss.serv.datatypes.entity.api.SSEntityClientI;
 import at.kc.tugraz.ss.serv.datatypes.entity.api.SSEntityServerI;
@@ -32,6 +33,7 @@ import at.kc.tugraz.ss.serv.serv.api.SSConfA;
 import at.kc.tugraz.ss.serv.serv.api.SSServA;
 import at.kc.tugraz.ss.serv.serv.api.SSServImplA;
 import at.kc.tugraz.ss.serv.serv.caller.SSServCaller;
+import java.lang.reflect.Method;
 import java.util.List;
 
 public class SSEntityServ extends SSServA{
@@ -62,12 +64,33 @@ public class SSEntityServ extends SSServA{
   
   @Override
   public void initServ() throws Exception{
+    
+    if(!servConf.use){
+      return;
+    }
+    
+    setMaxRequsForClientOps();
   }
   
   @Override
   public SSCoreConfA getConfForCloudDeployment(
     final SSCoreConfA coreConfA,
     final List<Class> configuredServs) throws Exception{
+    
     throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+  }
+  
+  private void setMaxRequsForClientOps() throws Exception{
+    
+    SSMethU op;
+      
+    for(Method method : servImplClientInteraceClass.getMethods()){
+      
+      op = SSMethU.get(method.getName());
+
+      switch(op){
+        case entityDescsGet: maxRequsForClientOpsPerUser.put(op, 1);
+      }
+    }
   }
 }
