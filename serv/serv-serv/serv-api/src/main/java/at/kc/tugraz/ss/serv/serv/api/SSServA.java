@@ -61,40 +61,47 @@ public abstract class SSServA{
     final String      user,
     final SSServImplA servImpl) throws Exception{
     
-    if(servImpl instanceof SSServImplWithDBA){
-      
-      if(((SSServImplWithDBA)servImpl).dbSQL.getActive() > ((SSServImplWithDBA)servImpl).dbSQL.getMaxActive() - 30){
-        throw new SSErr(SSErrE.maxNumDBConsReached);
-      }
-    }
-    
-    if(!maxRequsForClientOpsPerUser.containsKey(op)){
-      return;
-    }
-    
-    Map<String, List<SSServImplA>> servImplsForUser;
-    List<SSServImplA>              servImpls;
-      
-    synchronized(actualRequsForClientOpsForUser){
-      
-      if(!actualRequsForClientOpsForUser.containsKey(op)){
-        
-        servImplsForUser = new HashMap<>();
-        servImpls        = new ArrayList<>();
-        
-        servImplsForUser.put(user, servImpls);
-        
-        actualRequsForClientOpsForUser.put(op, servImplsForUser);
-      }else{
-        
-        servImpls = actualRequsForClientOpsForUser.get(op).get(user);
-        
-        if(servImpls.size() == maxRequsForClientOpsPerUser.get(op)){
-          throw new SSErr(SSErrE.maxNumClientConsForOpReached);
+    try{
+      if(servImpl instanceof SSServImplWithDBA){
+
+        if(((SSServImplWithDBA)servImpl).dbSQL.getActive() > ((SSServImplWithDBA)servImpl).dbSQL.getMaxActive() - 30){
+          throw new SSErr(SSErrE.maxNumDBConsReached);
         }
       }
-      
-      servImpls.add(servImpl);
+
+      if(!maxRequsForClientOpsPerUser.containsKey(op)){
+        return;
+      }
+
+      Map<String, List<SSServImplA>> servImplsForUser;
+      List<SSServImplA>              servImpls;
+
+      synchronized(actualRequsForClientOpsForUser){
+
+        if(
+          !actualRequsForClientOpsForUser.containsKey(op) ||
+          actualRequsForClientOpsForUser.get(op).get(user) == null){
+
+          servImplsForUser = new HashMap<>();
+          servImpls        = new ArrayList<>();
+          
+          servImplsForUser.put(user, servImpls);
+          
+          actualRequsForClientOpsForUser.put(op, servImplsForUser);
+        }else{
+          
+          servImpls = actualRequsForClientOpsForUser.get(op).get(user);
+          
+          if(
+            servImpls.size() == maxRequsForClientOpsPerUser.get(op)){
+            throw new SSErr(SSErrE.maxNumClientConsForOpReached);
+          }
+        }
+        
+        servImpls.add(servImpl);
+      }
+    }catch(Exception error){
+      SSServErrReg.regErrThrow(error);
     }
   }
   
@@ -102,21 +109,25 @@ public abstract class SSServA{
     final SSMethU     op,
     final String      user,
     final SSServImplA servImpl) throws Exception{
-
-    if(!maxRequsForClientOpsPerUser.containsKey(op)){
-      return;
-    }
     
-    synchronized(actualRequsForClientOpsForUser){
-      
-      if(
-        !actualRequsForClientOpsForUser.containsKey(op) ||
-        actualRequsForClientOpsForUser.get(op).isEmpty() ||
-        actualRequsForClientOpsForUser.get(op).get(user).isEmpty()){
+    try{
+      if(!maxRequsForClientOpsPerUser.containsKey(op)){
         return;
       }
       
-      actualRequsForClientOpsForUser.get(op).get(user).remove(servImpl);
+      synchronized(actualRequsForClientOpsForUser){
+        
+        if(
+          !actualRequsForClientOpsForUser.containsKey(op) ||
+          actualRequsForClientOpsForUser.get(op).isEmpty() ||
+          actualRequsForClientOpsForUser.get(op).get(user).isEmpty()){
+          return;
+        }
+        
+        actualRequsForClientOpsForUser.get(op).get(user).remove(servImpl);
+      }
+    }catch(Exception error){
+      SSServErrReg.regErrThrow(error);
     }
   }
   
