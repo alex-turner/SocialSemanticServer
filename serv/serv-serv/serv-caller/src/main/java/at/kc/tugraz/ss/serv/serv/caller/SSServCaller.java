@@ -66,6 +66,23 @@ import java.util.Map;
 public class SSServCaller {
   
   /* flag */
+  public static List<SSFlag> flagsGet(
+    final SSUri          user,
+    final List<SSUri>    entities,
+    final List<String>   types, 
+    final Long           startTime,
+    final Long           endTime) throws Exception{
+    
+    final Map<String, Object> opPars = new HashMap<>();
+    
+    opPars.put(SSVarU.user,              user);
+    opPars.put(SSVarU.entities,          entities);
+    opPars.put(SSVarU.types,             types);
+    opPars.put(SSVarU.startTime,         startTime);
+    opPars.put(SSVarU.endTime,           endTime);
+    
+    return (List<SSFlag>) SSServA.callServViaServer(new SSServPar(SSMethU.flagsGet, opPars)); 
+  }
   
   public static Boolean flagsUserSet(
     final SSUri          user,
