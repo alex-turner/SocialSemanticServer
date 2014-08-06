@@ -83,7 +83,7 @@ public class SSEntityDescsGetPar extends SSServPar{
         }catch(Exception error){}
         
         try{
-          getThumb        = false; //TODO dtheiler: bring that back in: Boolean.valueOf  (clientPars.get(SSVarU.getThumb));
+          getThumb        = false;
         }catch(Exception error){}
         
         try{
