@@ -89,7 +89,7 @@ public class SSEntityServ extends SSServA{
       op = SSMethU.get(method.getName());
 
       switch(op){
-        case entityDescsGet: maxRequsForClientOpsPerUser.put(op, 1);
+        case entityDescsGet: maxRequsForClientOpsPerUser.put(op, 15);
         case entityDescGet:  maxRequsForClientOpsPerUser.put(op, 20);
       }
     }
