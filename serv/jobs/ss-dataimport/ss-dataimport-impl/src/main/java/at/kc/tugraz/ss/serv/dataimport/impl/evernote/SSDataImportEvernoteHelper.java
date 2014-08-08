@@ -322,6 +322,7 @@ public class SSDataImportEvernoteHelper {
       
       new SSDataImportEvernoteNoteContentHandler(
         userUri,
+        userCircle,
         note,
         noteUri,
         localWorkPath).handleNoteContent();
@@ -592,6 +593,7 @@ public class SSDataImportEvernoteHelper {
       
       new SSDataImportEvernoteResourceContentHandler(
         userUri,
+        userCircle,
         resource,
         resourceUri,
         localWorkPath).handleResourceContent();
