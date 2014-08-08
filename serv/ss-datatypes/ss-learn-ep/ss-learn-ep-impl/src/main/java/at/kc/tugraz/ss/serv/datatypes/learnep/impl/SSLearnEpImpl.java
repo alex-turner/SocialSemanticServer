@@ -166,11 +166,11 @@ public class SSLearnEpImpl extends SSServImplWithDBA implements SSLearnEpClientI
 
   @Override
   public Boolean copyUserEntity(
-    final SSUri user,
+    final SSUri       user,
     final List<SSUri> users,
-    final SSUri entity,
+    final SSUri       entity,
     final List<SSUri> entitiesToExclude,
-    final SSEntityE entityType) throws Exception{
+    final SSEntityE   entityType) throws Exception{
 
     try{
 
@@ -481,6 +481,12 @@ public class SSLearnEpImpl extends SSServImplWithDBA implements SSLearnEpClientI
           par.user,
           entityUserCircle.id,
           learnEpEntityUri,
+          false);
+        
+        SSServCaller.entityEntitiesToCircleAdd(
+          par.user,
+          entityUserCircle.id,
+          par.entity,
           false);
       }
 
