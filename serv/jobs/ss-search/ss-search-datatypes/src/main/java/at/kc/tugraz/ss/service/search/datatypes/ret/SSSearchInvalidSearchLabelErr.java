@@ -18,26 +18,11 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
- package at.kc.tugraz.ss.service.search.api;
+package at.kc.tugraz.ss.service.search.datatypes.ret;
 
-import at.kc.tugraz.ss.serv.datatypes.SSServPar;
-import at.kc.tugraz.ss.serv.datatypes.entity.datatypes.SSEntity;
-import at.kc.tugraz.ss.service.search.datatypes.SSSearchResult;
-import java.util.List;
+public class SSSearchInvalidSearchLabelErr extends Exception{
 
-public interface SSSearchServerI {
-
-  public List<SSEntity>       search                 (final SSServPar parA) throws Exception;
-  
-  @Deprecated
-  public List<SSSearchResult> searchTags             (final SSServPar parA) throws Exception;
-  
-  @Deprecated
-  public List<SSSearchResult> searchTagsWithinEntity (final SSServPar parA) throws Exception;
-  
-  @Deprecated
-  public List<SSSearchResult> searchMIs              (final SSServPar parA) throws Exception;
-  
-  @Deprecated
-  public List<SSSearchResult> searchSolr             (final SSServPar parA) throws Exception;
+  public SSSearchInvalidSearchLabelErr(String message) {
+    super(message);
+  }
 }

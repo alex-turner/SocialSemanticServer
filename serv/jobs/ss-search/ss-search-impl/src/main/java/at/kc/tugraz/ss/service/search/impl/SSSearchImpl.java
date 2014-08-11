@@ -20,11 +20,9 @@
 */
 package at.kc.tugraz.ss.service.search.impl;
 
-import at.kc.tugraz.socialserver.utils.SSLogU;
 import at.kc.tugraz.socialserver.utils.SSStrU;
 import at.kc.tugraz.ss.service.search.datatypes.pars.SSSearchTagsPar;
 import at.kc.tugraz.ss.adapter.socket.datatypes.SSSocketCon;
-import at.kc.tugraz.ss.datatypes.datatypes.entity.SSEntityA;
 import at.kc.tugraz.ss.datatypes.datatypes.enums.SSSpaceE;
 import at.kc.tugraz.ss.datatypes.datatypes.entity.SSUri;
 import at.kc.tugraz.ss.serv.datatypes.SSServPar;
@@ -35,12 +33,10 @@ import at.kc.tugraz.ss.serv.serv.api.SSServImplMiscA;
 import at.kc.tugraz.ss.serv.serv.caller.SSServCaller;
 import at.kc.tugraz.ss.service.search.api.*;
 import at.kc.tugraz.ss.service.search.datatypes.*;
-import at.kc.tugraz.ss.service.search.datatypes.pars.SSSearchCombinedPar;
 import at.kc.tugraz.ss.service.search.datatypes.pars.SSSearchMIsPar;
 import at.kc.tugraz.ss.service.search.datatypes.pars.SSSearchPar;
 import at.kc.tugraz.ss.service.search.datatypes.pars.SSSearchSolrPar;
 import at.kc.tugraz.ss.service.search.datatypes.pars.SSSearchTagsWithinEntityPar;
-import at.kc.tugraz.ss.service.search.datatypes.ret.SSSearchCombinedRet;
 import at.kc.tugraz.ss.service.search.datatypes.ret.SSSearchMIsRet;
 import at.kc.tugraz.ss.service.search.datatypes.ret.SSSearchRet;
 import at.kc.tugraz.ss.service.search.datatypes.ret.SSSearchSolrRet;
@@ -57,15 +53,6 @@ public class SSSearchImpl extends SSServImplMiscA implements SSSearchClientI, SS
   }
   
   /* SSSearchClientI */
-  
-  @Deprecated
-  @Override
-  public void searchCombined(final SSSocketCon sSCon, final SSServPar parA) throws Exception{
-    
-    SSServCaller.checkKey(parA);
-    
-    sSCon.writeRetFullToClient(SSSearchCombinedRet.get(searchCombined(parA), parA.op));
-  }
   
   @Deprecated
   @Override
@@ -275,116 +262,6 @@ public class SSSearchImpl extends SSServImplMiscA implements SSSearchClientI, SS
     }
   }
   
-  @Deprecated
-  @Override
-  public List<SSSearchResult> searchCombined(final SSServPar parA) throws Exception {
-    return searchCombined(new SSSearchCombinedPar(parA));
-  }
-  
-  @Deprecated
-  protected List<SSSearchResult> searchCombined(final SSSearchCombinedPar par) throws Exception{
-    
-    try{
-      final List<SSSearchResult> searchResults        = new ArrayList<>();
-      final List<SSSearchResult> searchResultsForUser = new ArrayList<>();
-      final List<SSUri>          subEntities          = new ArrayList<>();
-      SSEntity                   entityToCheckType;
-      
-      if(par.onlySubEntities){
-      
-        subEntities.addAll(
-          SSSearchMiscFct.getSubEntities(
-            par.user, 
-            par.entities));
-
-        if(par.includeTags){
-      
-          for(SSUri entity : subEntities){
-            
-            searchResults.addAll(
-              searchTagsWithinEntity(
-                SSSearchTagsWithinEntityPar.get(
-                  par.user,
-                  entity,
-                  par.keywords)));
-          }
-        }
-      }
-      
-      if(
-        par.includeTags &&
-        !par.onlySubEntities){
-        
-        searchResults.addAll(
-          searchTags(
-            SSSearchTagsPar.get(
-              par.user,
-              par.keywords,
-              SSStrU.valueOr,
-              10)));
-      }
-      
-      if(par.includeTextualContent){
-        
-        searchResults.addAll(
-          SSSearchMiscFct.filterSearchResultsForSubEntitySearch(
-            searchSolr(
-              SSSearchSolrPar.get(
-                par.user,
-                par.keywords,
-                SSStrU.valueOr)),
-            par.onlySubEntities,
-            subEntities));
-      }
-      
-      if(par.includeMIs){
-        
-//        searchResults.addAll(
-//          SSSearchMiscFct.filterSearchResultsForSubEntitySearch(
-//            searchMIs(
-//              SSSearchMIsPar.get(
-//                par.keywords,
-//                SSStrU.valueOr)),
-//            par.onlySubEntities,
-//            subEntities));
-      }
-      
-      searchResults.addAll(
-        SSSearchMiscFct.filterSearchResultsForSubEntitySearch(
-          SSSearchMiscFct.searchForLabelAndDescription(
-            par.keywords,
-            par.includeDescription,
-            par.includeLabel),
-          par.onlySubEntities,
-          subEntities));
-      
-      SSStrU.distinctWithoutEmptyAndNull2(searchResults);
-      
-      for(SSSearchResult searchResult : searchResults){
-        
-        if(!SSServCaller.entityUserCanRead(par.user, searchResult.entity)){
-          continue;
-        }
-        
-        if(!par.types.isEmpty()){
-          
-          entityToCheckType = SSServCaller.entityGet(searchResult.entity);
-        
-          if(!SSStrU.contains(par.types, entityToCheckType.type)){
-            continue;
-          }
-        }
-
-        searchResultsForUser.add(searchResult);
-      }
-      
-      return searchResultsForUser;
-    }catch(Exception error){
-      SSServErrReg.regErrThrow(error);
-      return null;
-    }
-  }
-    
   @Override
   public void search(final SSSocketCon sSCon, final SSServPar parA) throws Exception{
     
@@ -543,15 +420,16 @@ public class SSSearchImpl extends SSServImplMiscA implements SSSearchClientI, SS
   
   private List<SSUri> getLabelAndDescriptionResults(final SSSearchPar par) throws Exception{
     
-    final List<SSUri> results = new ArrayList<>();
+    final List<SSUri>         results  = new ArrayList<>();
+    final List<String>        keywords = SSStrU.toStr(SSSearchLabel.get(par.keywordsToSearchFor));
     
     if(
       par.includeDescription &&
       par.includeLabel){
       
-      if(!par.keywordsToSearchFor.isEmpty()){
+      if(!keywords.isEmpty()){
         
-        for(SSEntity entity : SSServCaller.entitiesForLabelsAndDescriptionsGet(par.keywordsToSearchFor)){
+        for(SSEntity entity : SSServCaller.entitiesForLabelsAndDescriptionsGet(keywords)){
           results.add(entity.id);
         }
       }
@@ -575,13 +453,16 @@ public class SSSearchImpl extends SSServImplMiscA implements SSSearchClientI, SS
       par.includeDescription &&
       !par.includeLabel){
       
-      for(SSEntity entity : SSServCaller.entitiesForDescriptionsGet(par.keywordsToSearchFor)){
-        results.add(entity.id);
+      if(!keywords.isEmpty()){
+       
+        for(SSEntity entity : SSServCaller.entitiesForDescriptionsGet(keywords)){
+          results.add(entity.id);
+        }
       }
       
-      if(!par.labelsToSearchFor.isEmpty()){
+      if(!par.descriptionsToSearchFor.isEmpty()){
         
-        for(SSEntity entity : SSServCaller.entitiesForLabelsAndDescriptionsGet(SSStrU.toStrWithoutEmptyAndNull(par.labelsToSearchFor))){
+        for(SSEntity entity : SSServCaller.entitiesForDescriptionsGet(SSStrU.toStrWithoutEmptyAndNull(par.descriptionsToSearchFor))){
           results.add(entity.id);
         }
       }
@@ -591,13 +472,16 @@ public class SSSearchImpl extends SSServImplMiscA implements SSSearchClientI, SS
       !par.includeDescription &&
       par.includeLabel){
       
-      for(SSEntity entity : SSServCaller.entitiesForLabelsGet(par.keywordsToSearchFor)){
-        results.add(entity.id);
+      if(!keywords.isEmpty()){
+       
+        for(SSEntity entity : SSServCaller.entitiesForLabelsGet(keywords)){
+          results.add(entity.id);
+        }
       }
       
-      if(!par.descriptionsToSearchFor.isEmpty()){
+      if(!par.labelsToSearchFor.isEmpty()){
         
-        for(SSEntity entity : SSServCaller.entitiesForLabelsAndDescriptionsGet(SSStrU.toStrWithoutEmptyAndNull(par.descriptionsToSearchFor))){
+        for(SSEntity entity : SSServCaller.entitiesForLabelsGet(SSStrU.toStrWithoutEmptyAndNull(par.labelsToSearchFor))){
           results.add(entity.id);
         }
       }
@@ -660,3 +544,107 @@ public class SSSearchImpl extends SSServImplMiscA implements SSSearchClientI, SS
     }
   }
 }
+
+//@Deprecated
+//  protected List<SSSearchResult> searchCombined(final SSSearchCombinedPar par) throws Exception{
+//    
+//    try{
+//      final List<SSSearchResult> searchResults        = new ArrayList<>();
+//      final List<SSSearchResult> searchResultsForUser = new ArrayList<>();
+//      final List<SSUri>          subEntities          = new ArrayList<>();
+//      SSEntity                   entityToCheckType;
+//      
+//      if(par.onlySubEntities){
+//      
+//        subEntities.addAll(
+//          SSSearchMiscFct.getSubEntities(
+//            par.user, 
+//            par.entities));
+//
+//        if(par.includeTags){
+//      
+//          for(SSUri entity : subEntities){
+//            
+//            searchResults.addAll(
+//              searchTagsWithinEntity(
+//                SSSearchTagsWithinEntityPar.get(
+//                  par.user,
+//                  entity,
+//                  par.keywords)));
+//          }
+//        }
+//      }
+//      
+//      if(
+//        par.includeTags &&
+//        !par.onlySubEntities){
+//        
+//        searchResults.addAll(
+//          searchTags(
+//            SSSearchTagsPar.get(
+//              par.user,
+//              par.keywords,
+//              SSStrU.valueOr,
+//              10)));
+//      }
+//      
+//      if(par.includeTextualContent){
+//        
+//        searchResults.addAll(
+//          SSSearchMiscFct.filterSearchResultsForSubEntitySearch(
+//            searchSolr(
+//              SSSearchSolrPar.get(
+//                par.user,
+//                par.keywords,
+//                SSStrU.valueOr)),
+//            par.onlySubEntities,
+//            subEntities));
+//      }
+//      
+//      if(par.includeMIs){
+//        
+////        searchResults.addAll(
+////          SSSearchMiscFct.filterSearchResultsForSubEntitySearch(
+////            searchMIs(
+////              SSSearchMIsPar.get(
+////                par.keywords,
+////                SSStrU.valueOr)),
+////            par.onlySubEntities,
+////            subEntities));
+//      }
+//      
+//      searchResults.addAll(
+//        SSSearchMiscFct.filterSearchResultsForSubEntitySearch(
+//          SSSearchMiscFct.searchForLabelAndDescription(
+//            par.keywords,
+//            par.includeDescription,
+//            par.includeLabel),
+//          par.onlySubEntities,
+//          subEntities));
+//      
+//      SSStrU.distinctWithoutEmptyAndNull2(searchResults);
+//      
+//      for(SSSearchResult searchResult : searchResults){
+//        
+//        if(!SSServCaller.entityUserCanRead(par.user, searchResult.entity)){
+//          continue;
+//        }
+//        
+//        if(!par.types.isEmpty()){
+//          
+//          entityToCheckType = SSServCaller.entityGet(searchResult.entity);
+//        
+//          if(!SSStrU.contains(par.types, entityToCheckType.type)){
+//            continue;
+//          }
+//        }
+//
+//        searchResultsForUser.add(searchResult);
+//      }
+//      
+//      return searchResultsForUser;
+//    }catch(Exception error){
+//      SSServErrReg.regErrThrow(error);
+//      return null;
+//    }
+//  }

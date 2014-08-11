@@ -28,8 +28,6 @@ public interface SSSearchClientI {
   public void search                  (final SSSocketCon sSCon, final SSServPar parA) throws Exception;
   
   @Deprecated
-  public void searchCombined          (final SSSocketCon sSCon, final SSServPar parA) throws Exception;
-  @Deprecated
   public void searchTags              (final SSSocketCon sSCon, final SSServPar parA) throws Exception;
   @Deprecated
   public void searchMIs               (final SSSocketCon sSCon, final SSServPar parA) throws Exception;

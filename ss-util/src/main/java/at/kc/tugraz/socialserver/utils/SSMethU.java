@@ -180,7 +180,6 @@ public enum SSMethU{
   searchSolr                                          ,
   searchMIs                                           ,
   searchTagsWithinEntity                              ,
-  searchCombined                                      ,
   search,
   
   //rating

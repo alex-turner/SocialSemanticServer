@@ -678,14 +678,6 @@ public class SSAdapterRest{
   }
   
   @POST
-  @Consumes(MediaType.APPLICATION_JSON)
-  @Produces(MediaType.APPLICATION_JSON)
-  @Path    (SSStrU.slash + "searchCombined")
-  public String searchCombined(String jsonRequ){
-    return handleStandardJSONRESTCall(jsonRequ, SSMethU.searchCombined);
-  }
-  
-  @POST
   @Deprecated
   @Consumes(MediaType.APPLICATION_JSON)
   @Produces(MediaType.APPLICATION_JSON)
