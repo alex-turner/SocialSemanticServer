@@ -33,7 +33,7 @@ retrieve files user currently could replace when uploading respective file again
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSFileUserFileWritesPar">SSFileUserFileWritesPar</a> </td>
+        <td>- </td>
         <td>  [SSFileGetEditingFilesRet](#SSFileGetEditingFilesRet) </td>
     </tr>
 </table>
@@ -53,7 +53,7 @@ set user being writer or reaader for given file
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSFileSetReaderOrWriterPar">SSFileSetReaderOrWriterPar</a> </td>
+        <td>- </td>
         <td>  [SSFileSetReaderOrWriterRet](#SSFileSetReaderOrWriterRet) </td>
     </tr>
 </table>
@@ -73,7 +73,7 @@ query whether given file can be downloaded with write access
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSFileCanWritePar">SSFileCanWritePar</a> </td>
+        <td>- </td>
         <td>  [SSFileCanWriteRet](#SSFileCanWriteRet) </td>
     </tr>
 </table>
@@ -93,7 +93,7 @@ retrieve a file&#39;s extension
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSFileExtGetPar">SSFileExtGetPar</a> </td>
+        <td>- </td>
         <td>  [SSFileExtGetRet](#SSFileExtGetRet) </td>
     </tr>
 </table>
@@ -115,7 +115,7 @@ download a file
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSFileDownloadPar">SSFileDownloadPar</a> </td>
+        <td>- </td>
         <td>  [byte](#byte) </td>
     </tr>
 </table>
@@ -181,28 +181,8 @@ search for entities
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSSearchPar">SSSearchPar</a> </td>
+        <td>- </td>
         <td>  [SSSearchRet](#SSSearchRet) </td>
-    </tr>
-</table>
-
-
-
-- - -
-#### **POST** `/entityDirectlyAdjoinedEntitiesRemove`
-
-remove certain attached attributes from an entity
-
-
-
-<table border="1">
-    <tr>
-        <td>In</td>
-        <td>Out</td>
-    </tr>
-    <tr>
-        <td><a href="#SSEntityUserDirectlyAdjoinedEntitiesRemovePar">SSEntityUserDirectlyAdjoinedEntitiesRemovePar</a> </td>
-        <td>  [SSEntityUserDirectlyAdjoinedEntitiesRemoveRet](#SSEntityUserDirectlyAdjoinedEntitiesRemoveRet) </td>
     </tr>
 </table>
 
@@ -221,7 +201,7 @@ retrieve users who can access given entity
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSEntityUserEntityUsersGetPar">SSEntityUserEntityUsersGetPar</a> </td>
+        <td>- </td>
         <td>  [SSEntityUserEntityUsersGetRet](#SSEntityUserEntityUsersGetRet) </td>
     </tr>
 </table>
@@ -241,7 +221,7 @@ retrieve circles the user is in
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSEntityUserCirclesGetPar">SSEntityUserCirclesGetPar</a> </td>
+        <td>- </td>
         <td>  [SSEntityUserCirclesGetRet](#SSEntityUserCirclesGetRet) </td>
     </tr>
 </table>
@@ -261,7 +241,7 @@ add given entities to a user-generated circle
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSEntityUserEntitiesToCircleAddPar">SSEntityUserEntitiesToCircleAddPar</a> </td>
+        <td>- </td>
         <td>  [SSEntityUserEntitiesToCircleAddRet](#SSEntityUserEntitiesToCircleAddRet) </td>
     </tr>
 </table>
@@ -281,7 +261,7 @@ add given users to a user-generated circle
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSEntityUserUsersToCircleAddPar">SSEntityUserUsersToCircleAddPar</a> </td>
+        <td>- </td>
         <td>  [SSEntityUserUsersToCircleAddRet](#SSEntityUserUsersToCircleAddRet) </td>
     </tr>
 </table>
@@ -301,7 +281,7 @@ create a circle and add users and entities to
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSEntityUserCircleCreatePar">SSEntityUserCircleCreatePar</a> </td>
+        <td>- </td>
         <td>  [SSEntityUserCircleCreateRet](#SSEntityUserCircleCreateRet) </td>
     </tr>
 </table>
@@ -321,7 +301,7 @@ import data from evernote for certain user
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSDataImportEvernotePar">SSDataImportEvernotePar</a> </td>
+        <td>- </td>
         <td>  [SSDataImportEvernoteRet](#SSDataImportEvernoteRet) </td>
     </tr>
 </table>
@@ -341,7 +321,7 @@ get predefined categories
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSCategoriesPredefinedGetPar">SSCategoriesPredefinedGetPar</a> </td>
+        <td>- </td>
         <td>  [SSCategoriesPredefinedGetRet](#SSCategoriesPredefinedGetRet) </td>
     </tr>
 </table>
@@ -361,7 +341,7 @@ retrieve all the user&#39;s collections given entity is in
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSCollsUserEntityIsInGetPar">SSCollsUserEntityIsInGetPar</a> </td>
+        <td>- </td>
         <td>  [SSCollsUserEntityIsInGetRet](#SSCollsUserEntityIsInGetRet) </td>
     </tr>
 </table>
@@ -381,7 +361,7 @@ retrieve a list of all public collections given user could subscribe to
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSCollsUserCouldSubscribeGetPar">SSCollsUserCouldSubscribeGetPar</a> </td>
+        <td>- </td>
         <td>  [SSCollsUserCouldSubscribeGetRet](#SSCollsUserCouldSubscribeGetRet) </td>
     </tr>
 </table>
@@ -401,7 +381,7 @@ change the sequential order of entries in a user&#39;s collection
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSCollUserEntryChangePosPar">SSCollUserEntryChangePosPar</a> </td>
+        <td>- </td>
         <td>  [SSCollUserEntryChangePosRet](#SSCollUserEntryChangePosRet) </td>
     </tr>
 </table>
@@ -421,7 +401,7 @@ delete one or more entries from a collection
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSCollUserEntriesDeletePar">SSCollUserEntriesDeletePar</a> </td>
+        <td>- </td>
         <td>  [SSCollUserEntriesDeleteRet](#SSCollUserEntriesDeleteRet) </td>
     </tr>
 </table>
@@ -441,7 +421,7 @@ retrieve the cumulated tags (and their frequencies) for all the sub collections 
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSCollUserCumulatedTagsGetPar">SSCollUserCumulatedTagsGetPar</a> </td>
+        <td>- </td>
         <td>  [SSCollUserCumulatedTagsGetRet](#SSCollUserCumulatedTagsGetRet) </td>
     </tr>
 </table>
@@ -461,7 +441,7 @@ retrieve discussions for a certain entity
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSDiscUserDiscURIsForTargetGetPar">SSDiscUserDiscURIsForTargetGetPar</a> </td>
+        <td>- </td>
         <td>  [SSDiscUserDiscURIsForTargetGetRet](#SSDiscUserDiscURIsForTargetGetRet) </td>
     </tr>
 </table>
@@ -481,7 +461,7 @@ retrieve the discussion with its entries
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSDiscUserWithEntriesGetPar">SSDiscUserWithEntriesGetPar</a> </td>
+        <td>- </td>
         <td>  [SSDiscUserWithEntriesRet](#SSDiscUserWithEntriesRet) </td>
     </tr>
 </table>
@@ -501,7 +481,7 @@ retrieve number of minutes left user is allowed to replace / re-upload a file
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSFileWritingMinutesLeftPar">SSFileWritingMinutesLeftPar</a> </td>
+        <td>- </td>
         <td>  [SSFileWritingMinutesLeftRet](#SSFileWritingMinutesLeftRet) </td>
     </tr>
 </table>
@@ -521,7 +501,7 @@ retrieve automatically usage-based modeled details for given entity
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSModelUEEntityDetailsPar">SSModelUEEntityDetailsPar</a> </td>
+        <td>- </td>
         <td>  [SSModelUEResourceDetailsRet](#SSModelUEResourceDetailsRet) </td>
     </tr>
 </table>
@@ -541,28 +521,8 @@ retrieve entities for tags (currently startTime is not used to retrieve entities
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSTagUserEntitiesForTagsGetPar">SSTagUserEntitiesForTagsGetPar</a> </td>
+        <td>- </td>
         <td>  [SSTagUserEntitiesForTagsGetRet](#SSTagUserEntitiesForTagsGetRet) </td>
-    </tr>
-</table>
-
-
-
-- - -
-#### **POST** `/flagsSet`
-
-set flags
-
-
-
-<table border="1">
-    <tr>
-        <td>In</td>
-        <td>Out</td>
-    </tr>
-    <tr>
-        <td><a href="#SSFlagsUserSetPar">SSFlagsUserSetPar</a> </td>
-        <td>  [SSFlagsUserSetRet](#SSFlagsUserSetRet) </td>
     </tr>
 </table>
 
@@ -581,48 +541,8 @@ retrieve the authentication key and user&#39;s uri for credentials
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSAuthCheckCredPar">SSAuthCheckCredPar</a> </td>
+        <td>- </td>
         <td>  [SSAuthCheckCredRet](#SSAuthCheckCredRet) </td>
-    </tr>
-</table>
-
-
-
-- - -
-#### **POST** `/activitiesGet`
-
-retrieve activities from within a certain time frame
-
-
-
-<table border="1">
-    <tr>
-        <td>In</td>
-        <td>Out</td>
-    </tr>
-    <tr>
-        <td><a href="#SSActivitiesUserGetPar">SSActivitiesUserGetPar</a> </td>
-        <td>  [SSActivitiesUserGetRet](#SSActivitiesUserGetRet) </td>
-    </tr>
-</table>
-
-
-
-- - -
-#### **POST** `/flagsGet`
-
-retrieve flags set
-
-
-
-<table border="1">
-    <tr>
-        <td>In</td>
-        <td>Out</td>
-    </tr>
-    <tr>
-        <td><a href="#SSFlagsUserGetPar">SSFlagsUserGetPar</a> </td>
-        <td>  [SSFlagsUserGetRet](#SSFlagsUserGetRet) </td>
     </tr>
 </table>
 
@@ -641,7 +561,7 @@ retrieve more detailed information for given entities of a user
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSEntityDescsGetPar">SSEntityDescsGetPar</a> </td>
+        <td>- </td>
         <td>  [SSEntityDescsGetRet](#SSEntityDescsGetRet) </td>
     </tr>
 </table>
@@ -649,9 +569,9 @@ retrieve more detailed information for given entities of a user
 
 
 - - -
-#### **POST** `/systemVersionGet`
+#### **POST** `/flagsGet`
 
-retrieve the version of the sss instance
+retrieve flags set
 
 
 
@@ -661,8 +581,48 @@ retrieve the version of the sss instance
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSSystemVersionGetPar">SSSystemVersionGetPar</a> </td>
-        <td>  [SSSystemVersionGetRet](#SSSystemVersionGetRet) </td>
+        <td>- </td>
+        <td>  [SSFlagsUserGetRet](#SSFlagsUserGetRet) </td>
+    </tr>
+</table>
+
+
+
+- - -
+#### **POST** `/activitiesGet`
+
+retrieve activities from within a certain time frame
+
+
+
+<table border="1">
+    <tr>
+        <td>In</td>
+        <td>Out</td>
+    </tr>
+    <tr>
+        <td>- </td>
+        <td>  [SSActivitiesUserGetRet](#SSActivitiesUserGetRet) </td>
+    </tr>
+</table>
+
+
+
+- - -
+#### **POST** `/flagsSet`
+
+set flags
+
+
+
+<table border="1">
+    <tr>
+        <td>In</td>
+        <td>Out</td>
+    </tr>
+    <tr>
+        <td>- </td>
+        <td>  [SSFlagsUserSetRet](#SSFlagsUserSetRet) </td>
     </tr>
 </table>
 
@@ -681,8 +641,28 @@ set an entity public (make it accessible for everyone)
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSEntityUserPublicSetPar">SSEntityUserPublicSetPar</a> </td>
+        <td>- </td>
         <td>  [SSEntityUserPublicSetRet](#SSEntityUserPublicSetRet) </td>
+    </tr>
+</table>
+
+
+
+- - -
+#### **POST** `/systemVersionGet`
+
+retrieve the version of the sss instance
+
+
+
+<table border="1">
+    <tr>
+        <td>In</td>
+        <td>Out</td>
+    </tr>
+    <tr>
+        <td>- </td>
+        <td>  [SSSystemVersionGetRet](#SSSystemVersionGetRet) </td>
     </tr>
 </table>
 
@@ -701,7 +681,7 @@ retrieve general attributes for given entity
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSEntityUserGetPar">SSEntityUserGetPar</a> </td>
+        <td>- </td>
         <td>  [SSEntityUserGetRet](#SSEntityUserGetRet) </td>
     </tr>
 </table>
@@ -721,7 +701,7 @@ retrieve a certain circle
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSEntityUserCircleGetPar">SSEntityUserCircleGetPar</a> </td>
+        <td>- </td>
         <td>  [SSEntityUserCircleGetRet](#SSEntityUserCircleGetRet) </td>
     </tr>
 </table>
@@ -741,7 +721,7 @@ copy an entity and hand it to a user
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSEntityUserCopyPar">SSEntityUserCopyPar</a> </td>
+        <td>- </td>
         <td>  [SSEntityUserCopyRet](#SSEntityUserCopyRet) </td>
     </tr>
 </table>
@@ -761,7 +741,7 @@ changes the label of the tag assigned to entities by given user
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSTagUserEditPar">SSTagUserEditPar</a> </td>
+        <td>- </td>
         <td>  [SSTagUserEditRet](#SSTagUserEditRet) </td>
     </tr>
 </table>
@@ -781,7 +761,7 @@ retrieve the user&#39;s root collection
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSCollUserRootGetPar">SSCollUserRootGetPar</a> </td>
+        <td>- </td>
         <td>  [SSCollUserRootGetRet](#SSCollUserRootGetRet) </td>
     </tr>
 </table>
@@ -801,7 +781,7 @@ retrieve the parent collection for given user&#39;s collection
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSCollUserParentGetPar">SSCollUserParentGetPar</a> </td>
+        <td>- </td>
         <td>  [SSCollUserParentGetRet](#SSCollUserParentGetRet) </td>
     </tr>
 </table>
@@ -821,7 +801,7 @@ add a (new) collection or any other entity to given user&#39;s collection
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSCollUserEntryAddPar">SSCollUserEntryAddPar</a> </td>
+        <td>- </td>
         <td>  [SSCollUserEntryAddRet](#SSCollUserEntryAddRet) </td>
     </tr>
 </table>
@@ -841,7 +821,7 @@ add existing collections or (new) entities to a collection
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSCollUserEntriesAddPar">SSCollUserEntriesAddPar</a> </td>
+        <td>- </td>
         <td>  [SSCollUserEntriesAddRet](#SSCollUserEntriesAddRet) </td>
     </tr>
 </table>
@@ -861,7 +841,7 @@ delete an item from a user&#39;s collection
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSCollUserEntryDeletePar">SSCollUserEntryDeletePar</a> </td>
+        <td>- </td>
         <td>  [SSCollUserEntryDeleteRet](#SSCollUserEntryDeleteRet) </td>
     </tr>
 </table>
@@ -881,7 +861,7 @@ share an entity directly with given users
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSEntityUserSharePar">SSEntityUserSharePar</a> </td>
+        <td>- </td>
         <td>  [SSEntityUserShareRet](#SSEntityUserShareRet) </td>
     </tr>
 </table>
@@ -901,7 +881,7 @@ retrieve a user&#39;s collection with entries
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSCollUserWithEntriesPar">SSCollUserWithEntriesPar</a> </td>
+        <td>- </td>
         <td>  [SSCollUserWithEntriesRet](#SSCollUserWithEntriesRet) </td>
     </tr>
 </table>
@@ -921,7 +901,7 @@ retrieve the user&#39;s collections with entries
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSCollsUserWithEntriesPar">SSCollsUserWithEntriesPar</a> </td>
+        <td>- </td>
         <td>  [SSCollsUserWithEntriesRet](#SSCollsUserWithEntriesRet) </td>
     </tr>
 </table>
@@ -941,7 +921,7 @@ retrieve the parent collection order for a user&#39;s collection
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSCollUserHierarchyGetPar">SSCollUserHierarchyGetPar</a> </td>
+        <td>- </td>
         <td>  [SSCollUserHierarchyGetRet](#SSCollUserHierarchyGetRet) </td>
     </tr>
 </table>
@@ -961,7 +941,7 @@ add a textual comment/answer/opinion to a discussion [for given entity] or creat
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSDiscUserEntryAddPar">SSDiscUserEntryAddPar</a> </td>
+        <td>- </td>
         <td>  [SSDiscUserEntryAddRet](#SSDiscUserEntryAddRet) </td>
     </tr>
 </table>
@@ -981,7 +961,7 @@ remove a discussion from given user
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSDiscUserRemovePar">SSDiscUserRemovePar</a> </td>
+        <td>- </td>
         <td>  [SSDiscUserRemoveRet](#SSDiscUserRemoveRet) </td>
     </tr>
 </table>
@@ -1001,7 +981,7 @@ retrieve all discussions given user is allowed to see
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSDiscsUserAllGetPar">SSDiscsUserAllGetPar</a> </td>
+        <td>- </td>
         <td>  [SSDiscsUserAllGetRet](#SSDiscsUserAllGetRet) </td>
     </tr>
 </table>
@@ -1021,7 +1001,7 @@ retrieve more detailed information for given entity
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSEntityDescGetPar">SSEntityDescGetPar</a> </td>
+        <td>- </td>
         <td>  [SSEntityDescGetRet](#SSEntityDescGetRet) </td>
     </tr>
 </table>
@@ -1041,7 +1021,7 @@ updates/adds given properties for an entity
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSEntityUserUpdatePar">SSEntityUserUpdatePar</a> </td>
+        <td>- </td>
         <td>  [SSEntityUserUpdateRet](#SSEntityUserUpdateRet) </td>
     </tr>
 </table>
@@ -1061,7 +1041,7 @@ retrieve the overall rating (by all users) for given entity
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSRatingOverallGetPar">SSRatingOverallGetPar</a> </td>
+        <td>- </td>
         <td>  [SSRatingOverallGetRet](#SSRatingOverallGetRet) </td>
     </tr>
 </table>
@@ -1081,7 +1061,7 @@ set the user&#39;s rating for given entity
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSRatingUserSetPar">SSRatingUserSetPar</a> </td>
+        <td>- </td>
         <td>  [SSRatingUserSetRet](#SSRatingUserSetRet) </td>
     </tr>
 </table>
@@ -1101,7 +1081,7 @@ retrieve tag recommendations based on user, entity, tag, time and category combi
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSRecommTagsPar">SSRecommTagsPar</a> </td>
+        <td>- </td>
         <td>  [SSRecommTagsRet](#SSRecommTagsRet) </td>
     </tr>
 </table>
@@ -1121,7 +1101,7 @@ retrieve tag assignments
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSTagsUserGetPar">SSTagsUserGetPar</a> </td>
+        <td>- </td>
         <td>  [SSTagsUserGetRet](#SSTagsUserGetRet) </td>
     </tr>
 </table>
@@ -1141,7 +1121,7 @@ add a tag within for an entity within given space
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSTagAddPar">SSTagAddPar</a> </td>
+        <td>- </td>
         <td>  [SSTagAddRet](#SSTagAddRet) </td>
     </tr>
 </table>
@@ -1161,7 +1141,7 @@ retrieve tag frequencies
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSTagUserFrequsGetPar">SSTagUserFrequsGetPar</a> </td>
+        <td>- </td>
         <td>  [SSTagUserFrequsGetRet](#SSTagUserFrequsGetRet) </td>
     </tr>
 </table>
@@ -1181,7 +1161,7 @@ remove tag, user, entity, space combinations
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSTagsUserRemovePar">SSTagsUserRemovePar</a> </td>
+        <td>- </td>
         <td>  [SSTagsUserRemoveRet](#SSTagsUserRemoveRet) </td>
     </tr>
 </table>
@@ -1201,7 +1181,7 @@ retrieve all users
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSUserAllPar">SSUserAllPar</a> </td>
+        <td>- </td>
         <td>  [SSUserAllRet](#SSUserAllRet) </td>
     </tr>
 </table>
@@ -1221,7 +1201,7 @@ add a usage-based trace, i.e. user event, for entity, user combination
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSUEAddPar">SSUEAddPar</a> </td>
+        <td>- </td>
         <td>  [SSUEAddRet](#SSUEAddRet) </td>
     </tr>
 </table>
@@ -1241,7 +1221,7 @@ retrieve user events for user, entity, time combination
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSUEsGetPar">SSUEsGetPar</a> </td>
+        <td>- </td>
         <td>  [SSUEsGetRet](#SSUEsGetRet) </td>
     </tr>
 </table>
@@ -1261,7 +1241,7 @@ retrieve given user event
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSUEGetPar">SSUEGetPar</a> </td>
+        <td>- </td>
         <td>  [SSUEGetRet](#SSUEGetRet) </td>
     </tr>
 </table>
@@ -1281,8 +1261,28 @@ retrieve the number of certain user events
         <td>Out</td>
     </tr>
     <tr>
-        <td><a href="#SSUECountGetPar">SSUECountGetPar</a> </td>
+        <td>- </td>
         <td>  [SSUECountGetRet](#SSUECountGetRet) </td>
+    </tr>
+</table>
+
+
+
+- - -
+#### **POST** `/entityDirectlyAdjoinedEntitiesRemove`
+
+remove certain attached attributes from an entity
+
+
+
+<table border="1">
+    <tr>
+        <td>In</td>
+        <td>Out</td>
+    </tr>
+    <tr>
+        <td>- </td>
+        <td>  [SSEntityUserDirectlyAdjoinedEntitiesRemoveRet](#SSEntityUserDirectlyAdjoinedEntitiesRemoveRet) </td>
     </tr>
 </table>
 
@@ -1291,72 +1291,6 @@ retrieve the number of certain user events
 - - -
 
 ## Data Types
-
-## <a name="SSActivitiesUserGetPar">SSActivitiesUserGetPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>users</td>
-        <td>Array[string]</td>
-        <td></td>
-        <td>users which have been involved in activities (optional)</td>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>entities</td>
-        <td>Array[string]</td>
-        <td></td>
-        <td>entities which have been involved in activities as targets (e.g. the target for a discussion) (optional)</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>endTime</td>
-        <td>long</td>
-        <td></td>
-        <td>time frame end (optional)</td>
-    </tr>
-    <tr>
-        <td>circles</td>
-        <td>Array[string]</td>
-        <td></td>
-        <td>groups for which activities shall be retrieved (optional)</td>
-    </tr>
-    <tr>
-        <td>types</td>
-        <td>Array[string]</td>
-        <td></td>
-        <td>types of activities to be queried (optional)</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-    <tr>
-        <td>startTime</td>
-        <td>long</td>
-        <td></td>
-        <td>time frame start (optional)</td>
-    </tr>
-</table>
-
 
 ## <a name="SSActivitiesUserGetRet">SSActivitiesUserGetRet</a>
 
@@ -1514,48 +1448,6 @@ retrieve the number of certain user events
 </table>
 
 
-## <a name="SSAuthCheckCredPar">SSAuthCheckCredPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>password</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user’s password</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-    <tr>
-        <td>label</td>
-        <td>string</td>
-        <td>true</td>
-        <td>name of the user, e.g. 'hugo'</td>
-    </tr>
-</table>
-
-
 ## <a name="SSAuthCheckCredRet">SSAuthCheckCredRet</a>
 
 <table border="1">
@@ -1582,36 +1474,6 @@ retrieve the number of certain user events
         <td><a href="#SSMethU">SSMethU</a></td>
         <td>true</td>
         <td>service operation executed</td>
-    </tr>
-</table>
-
-
-## <a name="SSCategoriesPredefinedGetPar">SSCategoriesPredefinedGetPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
     </tr>
 </table>
 
@@ -1766,42 +1628,6 @@ retrieve the number of certain user events
 </table>
 
 
-## <a name="SSCollUserCumulatedTagsGetPar">SSCollUserCumulatedTagsGetPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>coll</td>
-        <td>string</td>
-        <td>true</td>
-        <td>collection to retrieve all cumulated tags for</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-</table>
-
-
 ## <a name="SSCollUserCumulatedTagsGetRet">SSCollUserCumulatedTagsGetRet</a>
 
 <table border="1">
@@ -1822,54 +1648,6 @@ retrieve the number of certain user events
         <td><a href="#SSMethU">SSMethU</a></td>
         <td>true</td>
         <td>service operation executed</td>
-    </tr>
-</table>
-
-
-## <a name="SSCollUserEntriesAddPar">SSCollUserEntriesAddPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>labels</td>
-        <td>Array[string]</td>
-        <td>true</td>
-        <td>collection item labels</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>coll</td>
-        <td>string</td>
-        <td>true</td>
-        <td>collection to add sub-entities to</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-    <tr>
-        <td>entries</td>
-        <td>Array[string]</td>
-        <td>true</td>
-        <td>entities to add</td>
     </tr>
 </table>
 
@@ -1898,48 +1676,6 @@ retrieve the number of certain user events
 </table>
 
 
-## <a name="SSCollUserEntriesDeletePar">SSCollUserEntriesDeletePar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>coll</td>
-        <td>string</td>
-        <td>true</td>
-        <td>collection to delete entries from</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-    <tr>
-        <td>entries</td>
-        <td>Array[string]</td>
-        <td>true</td>
-        <td>items to delete</td>
-    </tr>
-</table>
-
-
 ## <a name="SSCollUserEntriesDeleteRet">SSCollUserEntriesDeleteRet</a>
 
 <table border="1">
@@ -1960,60 +1696,6 @@ retrieve the number of certain user events
         <td><a href="#SSMethU">SSMethU</a></td>
         <td>true</td>
         <td>service operation executed</td>
-    </tr>
-</table>
-
-
-## <a name="SSCollUserEntryAddPar">SSCollUserEntryAddPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>entry</td>
-        <td>string</td>
-        <td></td>
-        <td>either null for the creation of new sub-collection, an existing collection or an entity</td>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>coll</td>
-        <td>string</td>
-        <td>true</td>
-        <td>collection to add an entity to</td>
-    </tr>
-    <tr>
-        <td>addNewColl</td>
-        <td>boolean</td>
-        <td></td>
-        <td>whether a new collection should be created instead of adding an existing one</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-    <tr>
-        <td>label</td>
-        <td>string</td>
-        <td>true</td>
-        <td>title of the collection entry</td>
     </tr>
 </table>
 
@@ -2042,48 +1724,6 @@ retrieve the number of certain user events
 </table>
 
 
-## <a name="SSCollUserEntryChangePosPar">SSCollUserEntryChangePosPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>order</td>
-        <td>Array[string]</td>
-        <td>true</td>
-        <td>collection entries {URI} and their positions {Integer} in the form of [collEntryUri1,pos1,collEntryUri2,pos2,…]</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>coll</td>
-        <td>string</td>
-        <td>true</td>
-        <td>collection to change entry order</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-</table>
-
-
 ## <a name="SSCollUserEntryChangePosRet">SSCollUserEntryChangePosRet</a>
 
 <table border="1">
@@ -2104,48 +1744,6 @@ retrieve the number of certain user events
         <td><a href="#SSMethU">SSMethU</a></td>
         <td>true</td>
         <td>service operation executed</td>
-    </tr>
-</table>
-
-
-## <a name="SSCollUserEntryDeletePar">SSCollUserEntryDeletePar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>entry</td>
-        <td>string</td>
-        <td>true</td>
-        <td>entity to remove</td>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>coll</td>
-        <td>string</td>
-        <td>true</td>
-        <td>collection to delete an item from</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
     </tr>
 </table>
 
@@ -2174,42 +1772,6 @@ retrieve the number of certain user events
 </table>
 
 
-## <a name="SSCollUserHierarchyGetPar">SSCollUserHierarchyGetPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>coll</td>
-        <td>string</td>
-        <td>true</td>
-        <td>collection to retrieve it's parent hierarchy for</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-</table>
-
-
 ## <a name="SSCollUserHierarchyGetRet">SSCollUserHierarchyGetRet</a>
 
 <table border="1">
@@ -2230,42 +1792,6 @@ retrieve the number of certain user events
         <td><a href="#SSMethU">SSMethU</a></td>
         <td>true</td>
         <td>service operation executed</td>
-    </tr>
-</table>
-
-
-## <a name="SSCollUserParentGetPar">SSCollUserParentGetPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>coll</td>
-        <td>string</td>
-        <td>true</td>
-        <td>collection to retrieve parent collection for</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
     </tr>
 </table>
 
@@ -2294,36 +1820,6 @@ retrieve the number of certain user events
 </table>
 
 
-## <a name="SSCollUserRootGetPar">SSCollUserRootGetPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-</table>
-
-
 ## <a name="SSCollUserRootGetRet">SSCollUserRootGetRet</a>
 
 <table border="1">
@@ -2344,42 +1840,6 @@ retrieve the number of certain user events
         <td><a href="#SSMethU">SSMethU</a></td>
         <td>true</td>
         <td>service operation executed</td>
-    </tr>
-</table>
-
-
-## <a name="SSCollUserWithEntriesPar">SSCollUserWithEntriesPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>coll</td>
-        <td>string</td>
-        <td>true</td>
-        <td>collection to retrieve</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
     </tr>
 </table>
 
@@ -2408,36 +1868,6 @@ retrieve the number of certain user events
 </table>
 
 
-## <a name="SSCollsUserCouldSubscribeGetPar">SSCollsUserCouldSubscribeGetPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-</table>
-
-
 ## <a name="SSCollsUserCouldSubscribeGetRet">SSCollsUserCouldSubscribeGetRet</a>
 
 <table border="1">
@@ -2458,42 +1888,6 @@ retrieve the number of certain user events
         <td><a href="#SSMethU">SSMethU</a></td>
         <td>true</td>
         <td>service operation executed</td>
-    </tr>
-</table>
-
-
-## <a name="SSCollsUserEntityIsInGetPar">SSCollsUserEntityIsInGetPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>entity</td>
-        <td>string</td>
-        <td>true</td>
-        <td>entity to be searched for in user's collections</td>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
     </tr>
 </table>
 
@@ -2522,36 +1916,6 @@ retrieve the number of certain user events
 </table>
 
 
-## <a name="SSCollsUserWithEntriesPar">SSCollsUserWithEntriesPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-</table>
-
-
 ## <a name="SSCollsUserWithEntriesRet">SSCollsUserWithEntriesRet</a>
 
 <table border="1">
@@ -2572,42 +1936,6 @@ retrieve the number of certain user events
         <td><a href="#SSMethU">SSMethU</a></td>
         <td>true</td>
         <td>service operation executed</td>
-    </tr>
-</table>
-
-
-## <a name="SSDataImportEvernotePar">SSDataImportEvernotePar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>authToken</td>
-        <td>string</td>
-        <td>true</td>
-        <td>evernote authentication key</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
     </tr>
 </table>
 
@@ -2768,42 +2096,6 @@ retrieve the number of certain user events
 </table>
 
 
-## <a name="SSDiscUserDiscURIsForTargetGetPar">SSDiscUserDiscURIsForTargetGetPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>entity</td>
-        <td>string</td>
-        <td>true</td>
-        <td>entity to retrieve discussions for</td>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-</table>
-
-
 ## <a name="SSDiscUserDiscURIsForTargetGetRet">SSDiscUserDiscURIsForTargetGetRet</a>
 
 <table border="1">
@@ -2824,90 +2116,6 @@ retrieve the number of certain user events
         <td><a href="#SSMethU">SSMethU</a></td>
         <td>true</td>
         <td>service operation executed</td>
-    </tr>
-</table>
-
-
-## <a name="SSDiscUserEntryAddPar">SSDiscUserEntryAddPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>users</td>
-        <td>Array[string]</td>
-        <td></td>
-        <td>provides users to share this discussion with upon creation of a new discussion (optional, but works only for a new discussion)</td>
-    </tr>
-    <tr>
-        <td>entity</td>
-        <td>string</td>
-        <td></td>
-        <td>entity to start a discussion for (optional)</td>
-    </tr>
-    <tr>
-        <td>entry</td>
-        <td>string</td>
-        <td></td>
-        <td>text for the comment/answer/opinion (optional in case of a new discussion)</td>
-    </tr>
-    <tr>
-        <td>type</td>
-        <td>string</td>
-        <td></td>
-        <td>discussion type: disc, qa or chat (optional in case of an existing discussion)</td>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>entities</td>
-        <td>Array[string]</td>
-        <td></td>
-        <td>provides entities to be attached either to corresponding discussion if new discussion to be added or to respective entry in the other case (optional)</td>
-    </tr>
-    <tr>
-        <td>disc</td>
-        <td>string</td>
-        <td></td>
-        <td>discussion to add an entry for (optional in case of a new discussion)</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>description</td>
-        <td>string</td>
-        <td></td>
-        <td>describes the discussion in more detail (optional, except in case of a new discussion of type qa)</td>
-    </tr>
-    <tr>
-        <td>addNewDisc</td>
-        <td>boolean</td>
-        <td></td>
-        <td>whether a new disc should be created (optional)</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-    <tr>
-        <td>label</td>
-        <td>string</td>
-        <td></td>
-        <td>discussion name (optional in case of an existing discussion)</td>
     </tr>
 </table>
 
@@ -2942,42 +2150,6 @@ retrieve the number of certain user events
 </table>
 
 
-## <a name="SSDiscUserRemovePar">SSDiscUserRemovePar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>disc</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the disc to remove</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-</table>
-
-
 ## <a name="SSDiscUserRemoveRet">SSDiscUserRemoveRet</a>
 
 <table border="1">
@@ -3002,48 +2174,6 @@ retrieve the number of certain user events
 </table>
 
 
-## <a name="SSDiscUserWithEntriesGetPar">SSDiscUserWithEntriesGetPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>maxEntries</td>
-        <td>int</td>
-        <td>true</td>
-        <td>max entries to retrieve</td>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>disc</td>
-        <td>string</td>
-        <td>true</td>
-        <td>discussion to retrieve</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-</table>
-
-
 ## <a name="SSDiscUserWithEntriesRet">SSDiscUserWithEntriesRet</a>
 
 <table border="1">
@@ -3064,36 +2194,6 @@ retrieve the number of certain user events
         <td><a href="#SSMethU">SSMethU</a></td>
         <td>true</td>
         <td>service operation executed</td>
-    </tr>
-</table>
-
-
-## <a name="SSDiscsUserAllGetPar">SSDiscsUserAllGetPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
     </tr>
 </table>
 
@@ -3392,78 +2492,6 @@ retrieve the number of certain user events
 </table>
 
 
-## <a name="SSEntityDescGetPar">SSEntityDescGetPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>getUEs</td>
-        <td>boolean</td>
-        <td></td>
-        <td>whether user events for given user and entity should be included</td>
-    </tr>
-    <tr>
-        <td>getOverallRating</td>
-        <td>boolean</td>
-        <td></td>
-        <td>whether the overall rating for the entity should be delivered</td>
-    </tr>
-    <tr>
-        <td>entity</td>
-        <td>string</td>
-        <td>true</td>
-        <td>entity to get details for</td>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>getFlags</td>
-        <td>boolean</td>
-        <td></td>
-        <td>whether flags for this user and entity should be included</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>getDiscs</td>
-        <td>boolean</td>
-        <td></td>
-        <td>whether the uris of discussions about the entity should be returned</td>
-    </tr>
-    <tr>
-        <td>getThumb</td>
-        <td>boolean</td>
-        <td></td>
-        <td>whether a thumbnail for files should be included</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-    <tr>
-        <td>getTags</td>
-        <td>boolean</td>
-        <td></td>
-        <td>whether tags for the entity should be delivered</td>
-    </tr>
-</table>
-
-
 ## <a name="SSEntityDescGetRet">SSEntityDescGetRet</a>
 
 <table border="1">
@@ -3484,84 +2512,6 @@ retrieve the number of certain user events
         <td><a href="#SSEntityA">SSEntityA</a></td>
         <td></td>
         <td></td>
-    </tr>
-</table>
-
-
-## <a name="SSEntityDescsGetPar">SSEntityDescsGetPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>getUEs</td>
-        <td>boolean</td>
-        <td></td>
-        <td>whether user events for user's given/resulting entities shall be returned (optional)</td>
-    </tr>
-    <tr>
-        <td>getOverallRating</td>
-        <td>boolean</td>
-        <td></td>
-        <td>whether overall ratings for entities should be delivered (optional)</td>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>getFlags</td>
-        <td>boolean</td>
-        <td></td>
-        <td>whether flags for the user's entities should be included (optional)</td>
-    </tr>
-    <tr>
-        <td>entities</td>
-        <td>Array[string]</td>
-        <td></td>
-        <td>entities to get details for (optional if types is set)</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>getDiscs</td>
-        <td>boolean</td>
-        <td></td>
-        <td>whether discussion uris for entities shall be included (optional)</td>
-    </tr>
-    <tr>
-        <td>types</td>
-        <td>Array[string]</td>
-        <td></td>
-        <td>types of entities (optional if entities is set)</td>
-    </tr>
-    <tr>
-        <td>getThumb</td>
-        <td>boolean</td>
-        <td></td>
-        <td>whether a thumbnail for files should be included (optional)</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-    <tr>
-        <td>getTags</td>
-        <td>boolean</td>
-        <td></td>
-        <td>whether tags for entities should be delivered (optional)</td>
     </tr>
 </table>
 
@@ -3590,72 +2540,6 @@ retrieve the number of certain user events
 </table>
 
 
-## <a name="SSEntityUserCircleCreatePar">SSEntityUserCircleCreatePar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>users</td>
-        <td>Array[string]</td>
-        <td></td>
-        <td>users to add</td>
-    </tr>
-    <tr>
-        <td>type</td>
-        <td>string</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>entities</td>
-        <td>Array[string]</td>
-        <td></td>
-        <td>entities to add</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>isSystemCircle</td>
-        <td>boolean</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>description</td>
-        <td>string</td>
-        <td></td>
-        <td>textual annotation</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-    <tr>
-        <td>label</td>
-        <td>string</td>
-        <td>true</td>
-        <td>circle name</td>
-    </tr>
-</table>
-
-
 ## <a name="SSEntityUserCircleCreateRet">SSEntityUserCircleCreateRet</a>
 
 <table border="1">
@@ -3676,54 +2560,6 @@ retrieve the number of certain user events
         <td><a href="#SSMethU">SSMethU</a></td>
         <td>true</td>
         <td>service operation executed</td>
-    </tr>
-</table>
-
-
-## <a name="SSEntityUserCircleGetPar">SSEntityUserCircleGetPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>circle</td>
-        <td>string</td>
-        <td>true</td>
-        <td>circle the circle to retrieve</td>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>withSystemCircles</td>
-        <td>boolean</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>forUser</td>
-        <td>string</td>
-        <td></td>
-        <td>user for which the circle shall be retrieved</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
     </tr>
 </table>
 
@@ -3752,48 +2588,6 @@ retrieve the number of certain user events
 </table>
 
 
-## <a name="SSEntityUserCirclesGetPar">SSEntityUserCirclesGetPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>withSystemCircles</td>
-        <td>boolean</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>forUser</td>
-        <td>string</td>
-        <td></td>
-        <td>user to retrieve circles for (optional)</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-</table>
-
-
 ## <a name="SSEntityUserCirclesGetRet">SSEntityUserCirclesGetRet</a>
 
 <table border="1">
@@ -3814,60 +2608,6 @@ retrieve the number of certain user events
         <td><a href="#SSMethU">SSMethU</a></td>
         <td>true</td>
         <td>service operation executed</td>
-    </tr>
-</table>
-
-
-## <a name="SSEntityUserCopyPar">SSEntityUserCopyPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>comment</td>
-        <td>string</td>
-        <td></td>
-        <td>optional describing text</td>
-    </tr>
-    <tr>
-        <td>users</td>
-        <td>Array[string]</td>
-        <td>true</td>
-        <td>users to copy the entity for</td>
-    </tr>
-    <tr>
-        <td>entity</td>
-        <td>string</td>
-        <td>true</td>
-        <td>entity to copy</td>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>entitiesToExclude</td>
-        <td>Array[string]</td>
-        <td></td>
-        <td>if set contains sub entities to exclude from copying</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
     </tr>
 </table>
 
@@ -3896,66 +2636,6 @@ retrieve the number of certain user events
 </table>
 
 
-## <a name="SSEntityUserDirectlyAdjoinedEntitiesRemovePar">SSEntityUserDirectlyAdjoinedEntitiesRemovePar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>removeFromUserColls</td>
-        <td>boolean</td>
-        <td></td>
-        <td>whether the entity should be removed from all the user's collections</td>
-    </tr>
-    <tr>
-        <td>entity</td>
-        <td>string</td>
-        <td>true</td>
-        <td>entity to be removed</td>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>removeUserTags</td>
-        <td>boolean</td>
-        <td></td>
-        <td>whether the user's tags should be removed from the entity</td>
-    </tr>
-    <tr>
-        <td>removeUserRatings</td>
-        <td>boolean</td>
-        <td></td>
-        <td>whether the user's ratings should be removed from the entity</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-    <tr>
-        <td>removeUserLocations</td>
-        <td>boolean</td>
-        <td></td>
-        <td>whether locations added by the user should be removed from the entity</td>
-    </tr>
-</table>
-
-
 ## <a name="SSEntityUserDirectlyAdjoinedEntitiesRemoveRet">SSEntityUserDirectlyAdjoinedEntitiesRemoveRet</a>
 
 <table border="1">
@@ -3976,48 +2656,6 @@ retrieve the number of certain user events
         <td><a href="#SSMethU">SSMethU</a></td>
         <td>true</td>
         <td>service operation executed</td>
-    </tr>
-</table>
-
-
-## <a name="SSEntityUserEntitiesToCircleAddPar">SSEntityUserEntitiesToCircleAddPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>circle</td>
-        <td>string</td>
-        <td>true</td>
-        <td>circle to add entities to</td>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>entities</td>
-        <td>Array[string]</td>
-        <td>true</td>
-        <td>entities to add</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
     </tr>
 </table>
 
@@ -4046,42 +2684,6 @@ retrieve the number of certain user events
 </table>
 
 
-## <a name="SSEntityUserEntityUsersGetPar">SSEntityUserEntityUsersGetPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>entity</td>
-        <td>string</td>
-        <td>true</td>
-        <td>entity to retrieve users for</td>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-</table>
-
-
 ## <a name="SSEntityUserEntityUsersGetRet">SSEntityUserEntityUsersGetRet</a>
 
 <table border="1">
@@ -4102,42 +2704,6 @@ retrieve the number of certain user events
         <td><a href="#SSMethU">SSMethU</a></td>
         <td>true</td>
         <td>service operation executed</td>
-    </tr>
-</table>
-
-
-## <a name="SSEntityUserGetPar">SSEntityUserGetPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>entity</td>
-        <td>string</td>
-        <td>true</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
     </tr>
 </table>
 
@@ -4166,42 +2732,6 @@ retrieve the number of certain user events
 </table>
 
 
-## <a name="SSEntityUserPublicSetPar">SSEntityUserPublicSetPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>entity</td>
-        <td>string</td>
-        <td>true</td>
-        <td>entity to make public</td>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-</table>
-
-
 ## <a name="SSEntityUserPublicSetRet">SSEntityUserPublicSetRet</a>
 
 <table border="1">
@@ -4222,54 +2752,6 @@ retrieve the number of certain user events
         <td><a href="#SSMethU">SSMethU</a></td>
         <td>true</td>
         <td>service operation executed</td>
-    </tr>
-</table>
-
-
-## <a name="SSEntityUserSharePar">SSEntityUserSharePar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>comment</td>
-        <td>string</td>
-        <td></td>
-        <td>textual comment for sharing</td>
-    </tr>
-    <tr>
-        <td>users</td>
-        <td>Array[string]</td>
-        <td>true</td>
-        <td>user to share the entity with</td>
-    </tr>
-    <tr>
-        <td>entity</td>
-        <td>string</td>
-        <td>true</td>
-        <td>entity to be shared</td>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
     </tr>
 </table>
 
@@ -4298,60 +2780,6 @@ retrieve the number of certain user events
 </table>
 
 
-## <a name="SSEntityUserUpdatePar">SSEntityUserUpdatePar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>entity</td>
-        <td>string</td>
-        <td>true</td>
-        <td>entity to update</td>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>description</td>
-        <td>string</td>
-        <td></td>
-        <td>entity's updated description (optional)</td>
-    </tr>
-    <tr>
-        <td>comments</td>
-        <td>Array[string]</td>
-        <td></td>
-        <td>new textual annotations for the entity (optional)</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-    <tr>
-        <td>label</td>
-        <td>string</td>
-        <td></td>
-        <td>entity's updated name (optional)</td>
-    </tr>
-</table>
-
-
 ## <a name="SSEntityUserUpdateRet">SSEntityUserUpdateRet</a>
 
 <table border="1">
@@ -4376,48 +2804,6 @@ retrieve the number of certain user events
 </table>
 
 
-## <a name="SSEntityUserUsersToCircleAddPar">SSEntityUserUsersToCircleAddPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>circle</td>
-        <td>string</td>
-        <td>true</td>
-        <td>circle to add users to</td>
-    </tr>
-    <tr>
-        <td>users</td>
-        <td>Array[string]</td>
-        <td>true</td>
-        <td>users to add</td>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-</table>
-
-
 ## <a name="SSEntityUserUsersToCircleAddRet">SSEntityUserUsersToCircleAddRet</a>
 
 <table border="1">
@@ -4438,42 +2824,6 @@ retrieve the number of certain user events
         <td><a href="#SSMethU">SSMethU</a></td>
         <td>true</td>
         <td>service operation executed</td>
-    </tr>
-</table>
-
-
-## <a name="SSFileCanWritePar">SSFileCanWritePar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>file</td>
-        <td>string</td>
-        <td>true</td>
-        <td>file to be downloaded with write access</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
     </tr>
 </table>
 
@@ -4504,78 +2854,6 @@ retrieve the number of certain user events
         <td><a href="#SSMethU">SSMethU</a></td>
         <td>true</td>
         <td>service operation executed</td>
-    </tr>
-</table>
-
-
-## <a name="SSFileDownloadPar">SSFileDownloadPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>file</td>
-        <td>string</td>
-        <td>true</td>
-        <td>file to be downloaded</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-</table>
-
-
-## <a name="SSFileExtGetPar">SSFileExtGetPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>file</td>
-        <td>string</td>
-        <td>true</td>
-        <td>file to retrieve the extension for</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
     </tr>
 </table>
 
@@ -4664,48 +2942,6 @@ retrieve the number of certain user events
 </table>
 
 
-## <a name="SSFileSetReaderOrWriterPar">SSFileSetReaderOrWriterPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>file</td>
-        <td>string</td>
-        <td>true</td>
-        <td>file to set whether user is writer or reader</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>write</td>
-        <td>boolean</td>
-        <td>true</td>
-        <td>whether user shall be writer</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-</table>
-
-
 ## <a name="SSFileSetReaderOrWriterRet">SSFileSetReaderOrWriterRet</a>
 
 <table border="1">
@@ -4756,72 +2992,6 @@ retrieve the number of certain user events
         <td><a href="#SSMethU">SSMethU</a></td>
         <td>true</td>
         <td>service operation executed</td>
-    </tr>
-</table>
-
-
-## <a name="SSFileUserFileWritesPar">SSFileUserFileWritesPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-</table>
-
-
-## <a name="SSFileWritingMinutesLeftPar">SSFileWritingMinutesLeftPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>file</td>
-        <td>string</td>
-        <td>true</td>
-        <td>file to be re-uploaded</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
     </tr>
 </table>
 
@@ -5012,60 +3182,6 @@ retrieve the number of certain user events
 </table>
 
 
-## <a name="SSFlagsUserGetPar">SSFlagsUserGetPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>entities</td>
-        <td>Array[string]</td>
-        <td></td>
-        <td>entities</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>endTime</td>
-        <td>long</td>
-        <td></td>
-        <td>endTime</td>
-    </tr>
-    <tr>
-        <td>types</td>
-        <td>Array[string]</td>
-        <td></td>
-        <td>types</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-    <tr>
-        <td>startTime</td>
-        <td>long</td>
-        <td></td>
-        <td>startTime</td>
-    </tr>
-</table>
-
-
 ## <a name="SSFlagsUserGetRet">SSFlagsUserGetRet</a>
 
 <table border="1">
@@ -5086,60 +3202,6 @@ retrieve the number of certain user events
         <td><a href="#SSFlag">Array[SSFlag]</a></td>
         <td></td>
         <td></td>
-    </tr>
-</table>
-
-
-## <a name="SSFlagsUserSetPar">SSFlagsUserSetPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>entities</td>
-        <td>Array[string]</td>
-        <td>true</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>value</td>
-        <td>int</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>endTime</td>
-        <td>long</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>types</td>
-        <td>Array[string]</td>
-        <td>true</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
     </tr>
 </table>
 
@@ -5168,42 +3230,6 @@ retrieve the number of certain user events
 </table>
 
 
-## <a name="SSModelUEEntityDetailsPar">SSModelUEEntityDetailsPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>entity</td>
-        <td>string</td>
-        <td>true</td>
-        <td>entity to retrieve usage based details for</td>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-</table>
-
-
 ## <a name="SSModelUEResourceDetailsRet">SSModelUEResourceDetailsRet</a>
 
 <table border="1">
@@ -5214,13 +3240,13 @@ retrieve the number of certain user events
         <th>description</th>
     </tr>
     <tr>
-        <td>entity</td>
+        <td>recentTopic</td>
         <td>string</td>
         <td></td>
         <td></td>
     </tr>
     <tr>
-        <td>recentTopic</td>
+        <td>entity</td>
         <td>string</td>
         <td></td>
         <td></td>
@@ -5324,42 +3350,6 @@ retrieve the number of certain user events
 </table>
 
 
-## <a name="SSRatingOverallGetPar">SSRatingOverallGetPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>entity</td>
-        <td>string</td>
-        <td>true</td>
-        <td>entity to retrieve the overall rating for</td>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-</table>
-
-
 ## <a name="SSRatingOverallGetRet">SSRatingOverallGetRet</a>
 
 <table border="1">
@@ -5380,48 +3370,6 @@ retrieve the number of certain user events
         <td><a href="#SSMethU">SSMethU</a></td>
         <td>true</td>
         <td>service operation executed</td>
-    </tr>
-</table>
-
-
-## <a name="SSRatingUserSetPar">SSRatingUserSetPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>entity</td>
-        <td>string</td>
-        <td>true</td>
-        <td>entity to set the user’s rating for</td>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>value</td>
-        <td>int</td>
-        <td>true</td>
-        <td>rating value (i.e. 1,2,3,4,5)</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
     </tr>
 </table>
 
@@ -5450,60 +3398,6 @@ retrieve the number of certain user events
 </table>
 
 
-## <a name="SSRecommTagsPar">SSRecommTagsPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>entity</td>
-        <td>string</td>
-        <td></td>
-        <td>resource to be considered to retrieve recommendations for</td>
-    </tr>
-    <tr>
-        <td>maxTags</td>
-        <td>int</td>
-        <td></td>
-        <td>number of tags to be returned</td>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>categories</td>
-        <td>Array[string]</td>
-        <td></td>
-        <td>additional information to be taken into account</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>forUser</td>
-        <td>string</td>
-        <td></td>
-        <td>user to be considered to retrieve recommendations for</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-</table>
-
-
 ## <a name="SSRecommTagsRet">SSRecommTagsRet</a>
 
 <table border="1">
@@ -5528,138 +3422,6 @@ retrieve the number of certain user events
 </table>
 
 
-## <a name="SSSearchPar">SSSearchPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>includeLabel</td>
-        <td>boolean</td>
-        <td></td>
-        <td>whether labels of entities should be scanned</td>
-    </tr>
-    <tr>
-        <td>includeTags</td>
-        <td>boolean</td>
-        <td></td>
-        <td>whether tags of entities should be looked to find entities</td>
-    </tr>
-    <tr>
-        <td>includeOnlySubEntities</td>
-        <td>boolean</td>
-        <td></td>
-        <td>whether only sub-entities (e.g. collection entries) of entitiesToSearchWithin should be considered</td>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>typesToSearchOnlyFor</td>
-        <td>Array[string]</td>
-        <td></td>
-        <td>list of entity types to be considered for search exclusively</td>
-    </tr>
-    <tr>
-        <td>includeRecommendedResults</td>
-        <td>boolean</td>
-        <td></td>
-        <td>whether possibly recommended entities should be included in search results</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>misToSearchFor</td>
-        <td>Array[string]</td>
-        <td></td>
-        <td>maturing indicators of entities to be matched</td>
-    </tr>
-    <tr>
-        <td>provideEntries</td>
-        <td>boolean</td>
-        <td></td>
-        <td>whether entries (if available) of search results (e.g. the entries of a found collection) should be returned as well</td>
-    </tr>
-    <tr>
-        <td>includeTextualContent</td>
-        <td>boolean</td>
-        <td></td>
-        <td>whether the text content (if available) of entities should be scanned</td>
-    </tr>
-    <tr>
-        <td>includeMIs</td>
-        <td>boolean</td>
-        <td></td>
-        <td>whether maturing indicators should be included in search</td>
-    </tr>
-    <tr>
-        <td>tagsToSearchFor</td>
-        <td>Array[string]</td>
-        <td></td>
-        <td>tags to be searched for</td>
-    </tr>
-    <tr>
-        <td>includeDescription</td>
-        <td>boolean</td>
-        <td></td>
-        <td>whether descriptions of entities should be scanned</td>
-    </tr>
-    <tr>
-        <td>labelsToSearchFor</td>
-        <td>Array[string]</td>
-        <td></td>
-        <td>certain labels to be search for</td>
-    </tr>
-    <tr>
-        <td>wordsToSearchFor</td>
-        <td>Array[string]</td>
-        <td></td>
-        <td>keywords to be used in textual content search</td>
-    </tr>
-    <tr>
-        <td>entitiesToSearchWithin</td>
-        <td>Array[string]</td>
-        <td></td>
-        <td>entities for whom only sub entities get search for</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-    <tr>
-        <td>descriptionsToSearchFor</td>
-        <td>Array[string]</td>
-        <td></td>
-        <td>certain descriptions to be searched for</td>
-    </tr>
-    <tr>
-        <td>keywordsToSearchFor</td>
-        <td>Array[string]</td>
-        <td></td>
-        <td>general keywords to be searched for; get interpreted as, e.g. tags, words if respective flags set (e.g. includeTags)</td>
-    </tr>
-    <tr>
-        <td>extendToParents</td>
-        <td>boolean</td>
-        <td></td>
-        <td>whether search results shall contain the parents of found entities as search result</td>
-    </tr>
-</table>
-
-
 ## <a name="SSSearchRet">SSSearchRet</a>
 
 <table border="1">
@@ -5680,36 +3442,6 @@ retrieve the number of certain user events
         <td><a href="#SSMethU">SSMethU</a></td>
         <td>true</td>
         <td>service operation executed</td>
-    </tr>
-</table>
-
-
-## <a name="SSSystemVersionGetPar">SSSystemVersionGetPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
     </tr>
 </table>
 
@@ -5888,60 +3620,6 @@ retrieve the number of certain user events
 </table>
 
 
-## <a name="SSTagAddPar">SSTagAddPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>entity</td>
-        <td>string</td>
-        <td>true</td>
-        <td>entity to add tag to</td>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>space</td>
-        <td>string</td>
-        <td>true</td>
-        <td>access restriction for the tag (i.e. privateSpace, sharedSpace)</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-    <tr>
-        <td>label</td>
-        <td>string</td>
-        <td>true</td>
-        <td>label of the tag to add</td>
-    </tr>
-    <tr>
-        <td>creationTime</td>
-        <td>long</td>
-        <td></td>
-        <td></td>
-    </tr>
-</table>
-
-
 ## <a name="SSTagAddRet">SSTagAddRet</a>
 
 <table border="1">
@@ -6020,48 +3698,6 @@ retrieve the number of certain user events
 </table>
 
 
-## <a name="SSTagUserEditPar">SSTagUserEditPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>tag</td>
-        <td>string</td>
-        <td>true</td>
-        <td>tag to change the label for</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-    <tr>
-        <td>label</td>
-        <td>string</td>
-        <td>true</td>
-        <td>new label of the tag</td>
-    </tr>
-</table>
-
-
 ## <a name="SSTagUserEditRet">SSTagUserEditRet</a>
 
 <table border="1">
@@ -6082,60 +3718,6 @@ retrieve the number of certain user events
         <td><a href="#SSMethU">SSMethU</a></td>
         <td>true</td>
         <td>service operation executed</td>
-    </tr>
-</table>
-
-
-## <a name="SSTagUserEntitiesForTagsGetPar">SSTagUserEntitiesForTagsGetPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>labels</td>
-        <td>Array[string]</td>
-        <td></td>
-        <td>tag labels to consider for retrieving entities via tags (optional)</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>space</td>
-        <td>string</td>
-        <td></td>
-        <td>access restriction for tags to be considered (i.e. privateSpace, sharedSpace) (optional)</td>
-    </tr>
-    <tr>
-        <td>forUser</td>
-        <td>string</td>
-        <td></td>
-        <td>user to retrieve entities via tags for (optional)</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-    <tr>
-        <td>startTime</td>
-        <td>long</td>
-        <td></td>
-        <td>timestamp to retrieve tags (optional)</td>
     </tr>
 </table>
 
@@ -6164,66 +3746,6 @@ retrieve the number of certain user events
 </table>
 
 
-## <a name="SSTagUserFrequsGetPar">SSTagUserFrequsGetPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>entities</td>
-        <td>Array[string]</td>
-        <td></td>
-        <td>entities to retrieve tags for (optional)</td>
-    </tr>
-    <tr>
-        <td>labels</td>
-        <td>Array[string]</td>
-        <td></td>
-        <td>tag labels to consider for retrieving tags (optional)</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>space</td>
-        <td>string</td>
-        <td></td>
-        <td>access restriction for to be retrieved tags (i.e. privateSpace, sharedSpace) (optional)</td>
-    </tr>
-    <tr>
-        <td>forUser</td>
-        <td>string</td>
-        <td></td>
-        <td>user to retrieve tags for (optional)</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-    <tr>
-        <td>startTime</td>
-        <td>long</td>
-        <td></td>
-        <td>timestamp to retrieve tags from a certain point in time(optional)</td>
-    </tr>
-</table>
-
-
 ## <a name="SSTagUserFrequsGetRet">SSTagUserFrequsGetRet</a>
 
 <table border="1">
@@ -6248,66 +3770,6 @@ retrieve the number of certain user events
 </table>
 
 
-## <a name="SSTagsUserGetPar">SSTagsUserGetPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>entities</td>
-        <td>Array[string]</td>
-        <td></td>
-        <td>entities to retrieve tag assignments for (optional)</td>
-    </tr>
-    <tr>
-        <td>labels</td>
-        <td>Array[string]</td>
-        <td></td>
-        <td>tag labels to consider for retrieving tag assignments (optional)</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>space</td>
-        <td>string</td>
-        <td></td>
-        <td>access restriction for to be retrieved tag assignments (i.e. privateSpace, sharedSpace) (optional)</td>
-    </tr>
-    <tr>
-        <td>forUser</td>
-        <td>string</td>
-        <td></td>
-        <td>user to retrieve tag assignments for (optional)</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-    <tr>
-        <td>startTime</td>
-        <td>long</td>
-        <td></td>
-        <td>timestamp to retrieve tag assignments from a certain point in time (optional)</td>
-    </tr>
-</table>
-
-
 ## <a name="SSTagsUserGetRet">SSTagsUserGetRet</a>
 
 <table border="1">
@@ -6328,54 +3790,6 @@ retrieve the number of certain user events
         <td><a href="#SSTag">Array[SSTag]</a></td>
         <td></td>
         <td></td>
-    </tr>
-</table>
-
-
-## <a name="SSTagsUserRemovePar">SSTagsUserRemovePar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>entity</td>
-        <td>string</td>
-        <td></td>
-        <td>entity to consider removing tag assignments from</td>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>space</td>
-        <td>string</td>
-        <td></td>
-        <td>access restriction (i.e. privateSpace, sharedSpace) for tag-assignments to be removed</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-    <tr>
-        <td>label</td>
-        <td>string</td>
-        <td></td>
-        <td>label of the tag to consider when removing tag-assignments</td>
     </tr>
 </table>
 
@@ -6554,54 +3968,6 @@ retrieve the number of certain user events
 </table>
 
 
-## <a name="SSUEAddPar">SSUEAddPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>entity</td>
-        <td>string</td>
-        <td>true</td>
-        <td>entity with which some interaction shall be traced</td>
-    </tr>
-    <tr>
-        <td>type</td>
-        <td>string</td>
-        <td>true</td>
-        <td>type of the event</td>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>content</td>
-        <td>string</td>
-        <td>true</td>
-        <td>possible additional textual information of the trace</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-</table>
-
-
 ## <a name="SSUEAddRet">SSUEAddRet</a>
 
 <table border="1">
@@ -6622,66 +3988,6 @@ retrieve the number of certain user events
         <td><a href="#SSMethU">SSMethU</a></td>
         <td>true</td>
         <td>service operation executed</td>
-    </tr>
-</table>
-
-
-## <a name="SSUECountGetPar">SSUECountGetPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>entity</td>
-        <td>string</td>
-        <td></td>
-        <td>entity to count user events for</td>
-    </tr>
-    <tr>
-        <td>type</td>
-        <td>string</td>
-        <td></td>
-        <td>user event type to retrieve</td>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>endTime</td>
-        <td>long</td>
-        <td></td>
-        <td>end for user event inclusion</td>
-    </tr>
-    <tr>
-        <td>forUser</td>
-        <td>string</td>
-        <td></td>
-        <td>user to count user events for</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-    <tr>
-        <td>startTime</td>
-        <td>long</td>
-        <td></td>
-        <td>begin for user event inclusion</td>
     </tr>
 </table>
 
@@ -6710,42 +4016,6 @@ retrieve the number of certain user events
 </table>
 
 
-## <a name="SSUEGetPar">SSUEGetPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>ue</td>
-        <td>string</td>
-        <td>true</td>
-        <td>user event to retrieve</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-</table>
-
-
 ## <a name="SSUEGetRet">SSUEGetRet</a>
 
 <table border="1">
@@ -6766,66 +4036,6 @@ retrieve the number of certain user events
         <td><a href="#SSUE">SSUE</a></td>
         <td></td>
         <td></td>
-    </tr>
-</table>
-
-
-## <a name="SSUEsGetPar">SSUEsGetPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>entity</td>
-        <td>string</td>
-        <td></td>
-        <td>entity to retrieve user events for</td>
-    </tr>
-    <tr>
-        <td>type</td>
-        <td>string</td>
-        <td></td>
-        <td>user event type to retrieve</td>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>endTime</td>
-        <td>long</td>
-        <td></td>
-        <td>end timestamp for retrieving user events for</td>
-    </tr>
-    <tr>
-        <td>forUser</td>
-        <td>string</td>
-        <td></td>
-        <td>user to retrieve user events for</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
-    </tr>
-    <tr>
-        <td>startTime</td>
-        <td>long</td>
-        <td></td>
-        <td>start timestamp for retrieving user events for</td>
     </tr>
 </table>
 
@@ -6976,36 +4186,6 @@ retrieve the number of certain user events
         <td><a href="#SSEntityA">Array[SSEntityA]</a></td>
         <td></td>
         <td>flags assigned</td>
-    </tr>
-</table>
-
-
-## <a name="SSUserAllPar">SSUserAllPar</a>
-
-<table border="1">
-    <tr>
-        <th>name</th>
-        <th>type</th>
-        <th>required</th>
-        <th>description</th>
-    </tr>
-    <tr>
-        <td>key</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's access tocken</td>
-    </tr>
-    <tr>
-        <td>user</td>
-        <td>string</td>
-        <td>true</td>
-        <td>the user's identifier</td>
-    </tr>
-    <tr>
-        <td>op</td>
-        <td>string</td>
-        <td>true</td>
-        <td>operation to be executed</td>
     </tr>
 </table>
 

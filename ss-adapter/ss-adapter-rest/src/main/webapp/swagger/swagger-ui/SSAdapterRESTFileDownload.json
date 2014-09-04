@@ -17,35 +17,10 @@
       "parameters" : [ {
         "name" : "body",
         "required" : false,
-        "type" : "SSFileDownloadPar",
+        "type" : "string",
         "paramType" : "body",
         "allowMultiple" : false
       } ]
     } ]
-  } ],
-  "models" : {
-    "SSFileDownloadPar" : {
-      "id" : "SSFileDownloadPar",
-      "description" : "",
-      "required" : [ "file", "key", "op", "user" ],
-      "properties" : {
-        "file" : {
-          "type" : "string",
-          "description" : "file to be downloaded"
-        },
-        "key" : {
-          "type" : "string",
-          "description" : "the user's access tocken"
-        },
-        "op" : {
-          "type" : "string",
-          "description" : "operation to be executed"
-        },
-        "user" : {
-          "type" : "string",
-          "description" : "the user's identifier"
-        }
-      }
-    }
-  }
+  } ]
 }

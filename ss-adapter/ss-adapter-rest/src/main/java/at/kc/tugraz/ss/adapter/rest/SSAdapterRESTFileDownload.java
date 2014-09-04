@@ -20,11 +20,9 @@
 */
 package at.kc.tugraz.ss.adapter.rest;
 
-import at.kc.tugraz.socialserver.utils.SSJSONU;
 import at.kc.tugraz.socialserver.utils.SSStrU;
 import at.kc.tugraz.ss.adapter.socket.datatypes.SSSocketCon;
 import at.kc.tugraz.ss.serv.err.reg.SSServErrReg;
-import at.kc.tugraz.ss.service.filerepo.datatypes.pars.SSFileDownloadPar;
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
 import java.io.IOException;
@@ -48,13 +46,13 @@ public class SSAdapterRESTFileDownload{
   @ApiOperation(
     value = "download a file",
     response = byte.class)
-  public Response fileDownload(final SSFileDownloadPar input){
+  public Response fileDownload(final String jsonRequ){
     
     StreamingOutput  stream = null;
     SSSocketCon      sSCon;
     
     try{
-      sSCon = new SSSocketCon(SSRestMain.conf.host, SSRestMain.conf.port, SSJSONU.jsonStr(input));
+      sSCon = new SSSocketCon(SSRestMain.conf.host, SSRestMain.conf.port, jsonRequ /*SSJSONU.jsonStr(input)*/);
       
       sSCon.writeRequFullToSS   ();
       sSCon.readMsgFullFromSS   ();
@@ -89,4 +87,53 @@ public class SSAdapterRESTFileDownload{
     
     return Response.ok(stream).build();
   }
+  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_OCTET_STREAM)
+//  @Path(SSStrU.slash + "fileDownload")
+//  @ApiOperation(
+//    value = "download a file",
+//    response = byte.class)
+//  public Response fileDownload(final SSFileDownloadPar input){
+//    
+//    StreamingOutput  stream = null;
+//    SSSocketCon      sSCon;
+//    
+//    try{
+//      sSCon = new SSSocketCon(SSRestMain.conf.host, SSRestMain.conf.port, SSJSONU.jsonStr(input));
+//      
+//      sSCon.writeRequFullToSS   ();
+//      sSCon.readMsgFullFromSS   ();
+//      sSCon.writeRequFullToSS   ();
+//
+//      stream = new StreamingOutput(){
+//
+//        @Override
+//        public void write(OutputStream out) throws IOException{
+//          
+//          byte[] bytes;
+//
+//          while((bytes = sSCon.readFileChunkFromSS()).length > 0) {
+//
+//            out.write               (bytes);
+//            out.flush               ();
+//          }
+//          
+//          out.close();
+//        }
+//      };
+//    }catch(Exception error){
+//      
+//      try{
+//        return Response.serverError().build();
+//      }catch(Exception error1){
+//        SSServErrReg.regErr(error1, "writing error to client didnt work");
+//      }
+//    }finally{
+////      sSCon.closeCon();
+//    }
+//    
+//    return Response.ok(stream).build();
+//  }
 }

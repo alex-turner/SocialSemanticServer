@@ -22,30 +22,11 @@ package at.kc.tugraz.ss.adapter.rest;
 
 import at.kc.tugraz.socialserver.utils.SSMethU;
 import at.kc.tugraz.socialserver.utils.SSStrU;
-import at.kc.tugraz.ss.activity.datatypes.par.SSActivitiesUserGetPar;
 import at.kc.tugraz.ss.activity.datatypes.ret.SSActivitiesUserGetRet;
-import at.kc.tugraz.ss.adapter.socket.datatypes.SSSystemVersionGetPar;
 import at.kc.tugraz.ss.adapter.socket.datatypes.SSSystemVersionGetRet;
-import at.kc.tugraz.ss.category.datatypes.par.SSCategoriesPredefinedGetPar;
 import at.kc.tugraz.ss.category.datatypes.ret.SSCategoriesPredefinedGetRet;
-import at.kc.tugraz.ss.recomm.datatypes.par.SSRecommTagsPar;
 import at.kc.tugraz.ss.recomm.datatypes.ret.SSRecommTagsRet;
-import at.kc.tugraz.ss.serv.dataimport.datatypes.pars.SSDataImportEvernotePar;
 import at.kc.tugraz.ss.serv.dataimport.datatypes.pars.SSDataImportEvernoteRet;
-import at.kc.tugraz.ss.serv.datatypes.entity.datatypes.par.SSEntityDescGetPar;
-import at.kc.tugraz.ss.serv.datatypes.entity.datatypes.par.SSEntityDescsGetPar;
-import at.kc.tugraz.ss.serv.datatypes.entity.datatypes.par.SSEntityUserCircleCreatePar;
-import at.kc.tugraz.ss.serv.datatypes.entity.datatypes.par.SSEntityUserCircleGetPar;
-import at.kc.tugraz.ss.serv.datatypes.entity.datatypes.par.SSEntityUserCirclesGetPar;
-import at.kc.tugraz.ss.serv.datatypes.entity.datatypes.par.SSEntityUserCopyPar;
-import at.kc.tugraz.ss.serv.datatypes.entity.datatypes.par.SSEntityUserDirectlyAdjoinedEntitiesRemovePar;
-import at.kc.tugraz.ss.serv.datatypes.entity.datatypes.par.SSEntityUserEntitiesToCircleAddPar;
-import at.kc.tugraz.ss.serv.datatypes.entity.datatypes.par.SSEntityUserEntityUsersGetPar;
-import at.kc.tugraz.ss.serv.datatypes.entity.datatypes.par.SSEntityUserGetPar;
-import at.kc.tugraz.ss.serv.datatypes.entity.datatypes.par.SSEntityUserPublicSetPar;
-import at.kc.tugraz.ss.serv.datatypes.entity.datatypes.par.SSEntityUserSharePar;
-import at.kc.tugraz.ss.serv.datatypes.entity.datatypes.par.SSEntityUserUpdatePar;
-import at.kc.tugraz.ss.serv.datatypes.entity.datatypes.par.SSEntityUserUsersToCircleAddPar;
 import at.kc.tugraz.ss.serv.datatypes.entity.datatypes.ret.SSEntityDescGetRet;
 import at.kc.tugraz.ss.serv.datatypes.entity.datatypes.ret.SSEntityDescsGetRet;
 import at.kc.tugraz.ss.serv.datatypes.entity.datatypes.ret.SSEntityUserCircleCreateRet;
@@ -60,23 +41,8 @@ import at.kc.tugraz.ss.serv.datatypes.entity.datatypes.ret.SSEntityUserPublicSet
 import at.kc.tugraz.ss.serv.datatypes.entity.datatypes.ret.SSEntityUserShareRet;
 import at.kc.tugraz.ss.serv.datatypes.entity.datatypes.ret.SSEntityUserUpdateRet;
 import at.kc.tugraz.ss.serv.datatypes.entity.datatypes.ret.SSEntityUserUsersToCircleAddRet;
-import at.kc.tugraz.ss.serv.modeling.ue.datatypes.pars.SSModelUEEntityDetailsPar;
 import at.kc.tugraz.ss.serv.modeling.ue.datatypes.rets.SSModelUEResourceDetailsRet;
-import at.kc.tugraz.ss.serv.ss.auth.datatypes.pars.SSAuthCheckCredPar;
 import at.kc.tugraz.ss.serv.ss.auth.datatypes.ret.SSAuthCheckCredRet;
-import at.kc.tugraz.ss.service.coll.datatypes.pars.SSCollUserCumulatedTagsGetPar;
-import at.kc.tugraz.ss.service.coll.datatypes.pars.SSCollUserEntriesAddPar;
-import at.kc.tugraz.ss.service.coll.datatypes.pars.SSCollUserEntriesDeletePar;
-import at.kc.tugraz.ss.service.coll.datatypes.pars.SSCollUserEntryAddPar;
-import at.kc.tugraz.ss.service.coll.datatypes.pars.SSCollUserEntryChangePosPar;
-import at.kc.tugraz.ss.service.coll.datatypes.pars.SSCollUserEntryDeletePar;
-import at.kc.tugraz.ss.service.coll.datatypes.pars.SSCollUserHierarchyGetPar;
-import at.kc.tugraz.ss.service.coll.datatypes.pars.SSCollUserParentGetPar;
-import at.kc.tugraz.ss.service.coll.datatypes.pars.SSCollUserRootGetPar;
-import at.kc.tugraz.ss.service.coll.datatypes.pars.SSCollUserWithEntriesPar;
-import at.kc.tugraz.ss.service.coll.datatypes.pars.SSCollsUserCouldSubscribeGetPar;
-import at.kc.tugraz.ss.service.coll.datatypes.pars.SSCollsUserEntityIsInGetPar;
-import at.kc.tugraz.ss.service.coll.datatypes.pars.SSCollsUserWithEntriesPar;
 import at.kc.tugraz.ss.service.coll.datatypes.ret.SSCollUserCumulatedTagsGetRet;
 import at.kc.tugraz.ss.service.coll.datatypes.ret.SSCollUserEntriesAddRet;
 import at.kc.tugraz.ss.service.coll.datatypes.ret.SSCollUserEntriesDeleteRet;
@@ -90,48 +56,26 @@ import at.kc.tugraz.ss.service.coll.datatypes.ret.SSCollUserWithEntriesRet;
 import at.kc.tugraz.ss.service.coll.datatypes.ret.SSCollsUserCouldSubscribeGetRet;
 import at.kc.tugraz.ss.service.coll.datatypes.ret.SSCollsUserEntityIsInGetRet;
 import at.kc.tugraz.ss.service.coll.datatypes.ret.SSCollsUserWithEntriesRet;
-import at.kc.tugraz.ss.service.disc.datatypes.pars.SSDiscUserDiscURIsForTargetGetPar;
-import at.kc.tugraz.ss.service.disc.datatypes.pars.SSDiscUserEntryAddPar;
-import at.kc.tugraz.ss.service.disc.datatypes.pars.SSDiscUserRemovePar;
-import at.kc.tugraz.ss.service.disc.datatypes.pars.SSDiscUserWithEntriesGetPar;
-import at.kc.tugraz.ss.service.disc.datatypes.pars.SSDiscsUserAllGetPar;
 import at.kc.tugraz.ss.service.disc.datatypes.ret.SSDiscUserDiscURIsForTargetGetRet;
 import at.kc.tugraz.ss.service.disc.datatypes.ret.SSDiscUserEntryAddRet;
 import at.kc.tugraz.ss.service.disc.datatypes.ret.SSDiscUserRemoveRet;
 import at.kc.tugraz.ss.service.disc.datatypes.ret.SSDiscUserWithEntriesRet;
 import at.kc.tugraz.ss.service.disc.datatypes.ret.SSDiscsUserAllGetRet;
-import at.kc.tugraz.ss.service.filerepo.datatypes.pars.SSFileWritingMinutesLeftPar;
 import at.kc.tugraz.ss.service.filerepo.datatypes.rets.SSFileWritingMinutesLeftRet;
-import at.kc.tugraz.ss.service.rating.datatypes.pars.SSRatingOverallGetPar;
-import at.kc.tugraz.ss.service.rating.datatypes.pars.SSRatingUserSetPar;
 import at.kc.tugraz.ss.service.rating.datatypes.ret.SSRatingOverallGetRet;
 import at.kc.tugraz.ss.service.rating.datatypes.ret.SSRatingUserSetRet;
-import at.kc.tugraz.ss.service.search.datatypes.pars.SSSearchPar;
 import at.kc.tugraz.ss.service.search.datatypes.ret.SSSearchRet;
-import at.kc.tugraz.ss.service.tag.datatypes.pars.SSTagAddPar;
-import at.kc.tugraz.ss.service.tag.datatypes.pars.SSTagUserEditPar;
-import at.kc.tugraz.ss.service.tag.datatypes.pars.SSTagUserEntitiesForTagsGetPar;
-import at.kc.tugraz.ss.service.tag.datatypes.pars.SSTagUserFrequsGetPar;
-import at.kc.tugraz.ss.service.tag.datatypes.pars.SSTagsUserGetPar;
-import at.kc.tugraz.ss.service.tag.datatypes.pars.SSTagsUserRemovePar;
 import at.kc.tugraz.ss.service.tag.datatypes.ret.SSTagAddRet;
 import at.kc.tugraz.ss.service.tag.datatypes.ret.SSTagUserEditRet;
 import at.kc.tugraz.ss.service.tag.datatypes.ret.SSTagUserEntitiesForTagsGetRet;
 import at.kc.tugraz.ss.service.tag.datatypes.ret.SSTagUserFrequsGetRet;
 import at.kc.tugraz.ss.service.tag.datatypes.ret.SSTagsUserGetRet;
 import at.kc.tugraz.ss.service.tag.datatypes.ret.SSTagsUserRemoveRet;
-import at.kc.tugraz.ss.service.user.datatypes.pars.SSUserAllPar;
 import at.kc.tugraz.ss.service.user.datatypes.ret.SSUserAllRet;
-import at.kc.tugraz.ss.service.userevent.datatypes.pars.SSUEAddPar;
-import at.kc.tugraz.ss.service.userevent.datatypes.pars.SSUECountGetPar;
-import at.kc.tugraz.ss.service.userevent.datatypes.pars.SSUEGetPar;
-import at.kc.tugraz.ss.service.userevent.datatypes.pars.SSUEsGetPar;
 import at.kc.tugraz.ss.service.userevent.datatypes.ret.SSUEAddRet;
 import at.kc.tugraz.ss.service.userevent.datatypes.ret.SSUECountGetRet;
 import at.kc.tugraz.ss.service.userevent.datatypes.ret.SSUEGetRet;
 import at.kc.tugraz.ss.service.userevent.datatypes.ret.SSUEsGetRet;
-import at.kc.tugraz.sss.flag.datatypes.par.SSFlagsUserGetPar;
-import at.kc.tugraz.sss.flag.datatypes.par.SSFlagsUserSetPar;
 import at.kc.tugraz.sss.flag.datatypes.ret.SSFlagsUserGetRet;
 import at.kc.tugraz.sss.flag.datatypes.ret.SSFlagsUserSetRet;
 import com.wordnik.swagger.annotations.Api;
@@ -146,15 +90,15 @@ import javax.ws.rs.core.MediaType;
 @Api( value = "SSAdapterRest", description = "SSS REST API" )
 public class SSAdapterRest{
   
-  @POST
+    @POST
   @Consumes(MediaType.APPLICATION_JSON)
   @Produces(MediaType.APPLICATION_JSON)
   @Path    (SSStrU.slash + "authCheckCred")
   @ApiOperation(
     value = "retrieve the authentication key and user's uri for credentials",
     response = SSAuthCheckCredRet.class)
-  public String authCheckCred(final SSAuthCheckCredPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.authCheckCred);
+  public String authCheckCred(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.authCheckCred);
   }
   
   @POST
@@ -164,8 +108,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "get predefined categories",
     response = SSCategoriesPredefinedGetRet.class)
-  public String categoriesPredefinedGet(final SSCategoriesPredefinedGetPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.categoriesPredefinedGet);
+  public String categoriesPredefinedGet(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.categoriesPredefinedGet);
   }
   
   @POST
@@ -175,8 +119,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "set flags",
     response = SSFlagsUserSetRet.class)
-  public String flagsSet(final SSFlagsUserSetPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.flagsSet);
+  public String flagsSet(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.flagsSet);
   }
   
   @POST
@@ -186,8 +130,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "retrieve flags set",
     response = SSFlagsUserGetRet.class)
-  public String flagsGet(final SSFlagsUserGetPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.flagsGet);
+  public String flagsGet(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.flagsGet);
   }
   
   @POST
@@ -197,8 +141,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "retrieve more detailed information for given entities of a user",
     response = SSEntityDescsGetRet.class)
-  public String entityDescsGet(final SSEntityDescsGetPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.entityDescsGet);
+  public String entityDescsGet(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.entityDescsGet);
   }
   
   @POST
@@ -208,8 +152,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "import data from evernote for certain user",
     response = SSDataImportEvernoteRet.class)
-  public String dataImportEvernote(final SSDataImportEvernotePar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.dataImportEvernote);
+  public String dataImportEvernote(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.dataImportEvernote);
   }
   
   @POST
@@ -219,8 +163,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "retrieve activities from within a certain time frame",
     response = SSActivitiesUserGetRet.class)
-  public String activitiesGet(final SSActivitiesUserGetPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.activitiesGet);
+  public String activitiesGet(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.activitiesGet);
   }
   
   @POST
@@ -231,8 +175,8 @@ public class SSAdapterRest{
     value = "search for entities",
     response = SSSearchRet.class)
   public String search(
-    final SSSearchPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.search);
+    final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.search);
   }
   
   @POST
@@ -242,8 +186,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "retrieve the version of the sss instance",
     response = SSSystemVersionGetRet.class)
-  public String systemVersionGet(final SSSystemVersionGetPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.systemVersionGet);
+  public String systemVersionGet(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.systemVersionGet);
   }
   
   @POST
@@ -253,8 +197,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "set an entity public (make it accessible for everyone)",
     response = SSEntityUserPublicSetRet.class)
-  public String entityPublicSet(final SSEntityUserPublicSetPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.entityPublicSet);
+  public String entityPublicSet(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.entityPublicSet);
   }
   
   @POST
@@ -264,8 +208,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "retrieve general attributes for given entity",
     response = SSEntityUserGetRet.class)
-  public String entityGet(final SSEntityUserGetPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.entityGet);
+  public String entityGet(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.entityGet);
   }
   
   @POST
@@ -275,8 +219,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "retrieve a certain circle",
     response = SSEntityUserCircleGetRet.class)
-  public String entityCircleGet(final SSEntityUserCircleGetPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.entityCircleGet);
+  public String entityCircleGet(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.entityCircleGet);
   }
   
   @POST
@@ -286,8 +230,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "create a circle and add users and entities to",
     response = SSEntityUserCircleCreateRet.class)
-  public String entityCircleCreate(final SSEntityUserCircleCreatePar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.entityCircleCreate);
+  public String entityCircleCreate(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.entityCircleCreate);
   }
   
   @POST
@@ -297,8 +241,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "add given users to a user-generated circle",
     response = SSEntityUserUsersToCircleAddRet.class)
-  public String entityUsersToCircleAdd(final SSEntityUserUsersToCircleAddPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.entityUsersToCircleAdd);
+  public String entityUsersToCircleAdd(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.entityUsersToCircleAdd);
   }
   
   @POST
@@ -308,8 +252,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "copy an entity and hand it to a user",
     response = SSEntityUserCopyRet.class)
-  public String entityCopy(final SSEntityUserCopyPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.entityCopy);
+  public String entityCopy(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.entityCopy);
   }
 
   @POST
@@ -319,8 +263,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "add given entities to a user-generated circle",
     response = SSEntityUserEntitiesToCircleAddRet.class)
-  public String entityEntitiesToCircleAdd(final SSEntityUserEntitiesToCircleAddPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.entityEntitiesToCircleAdd);
+  public String entityEntitiesToCircleAdd(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.entityEntitiesToCircleAdd);
   }
   
   @POST
@@ -330,8 +274,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "retrieve circles the user is in",
     response = SSEntityUserCirclesGetRet.class)
-  public String entityUserCirclesGet(final SSEntityUserCirclesGetPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.entityUserCirclesGet);
+  public String entityUserCirclesGet(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.entityUserCirclesGet);
   }
   
   @POST
@@ -341,8 +285,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "retrieve users who can access given entity",
     response = SSEntityUserEntityUsersGetRet.class)
-  public String entityEntityUsersGet(final SSEntityUserEntityUsersGetPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.entityEntityUsersGet);
+  public String entityEntityUsersGet(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.entityEntityUsersGet);
   }
   
   @POST
@@ -352,8 +296,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "retrieve all the user's collections given entity is in",
     response = SSCollsUserEntityIsInGetRet.class)
-  public String collsEntityIsInGet(final SSCollsUserEntityIsInGetPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.collsEntityIsInGet);
+  public String collsEntityIsInGet(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.collsEntityIsInGet);
   }
   
   @POST
@@ -363,8 +307,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "retrieve a list of all public collections given user could subscribe to",
     response = SSCollsUserCouldSubscribeGetRet.class)
-  public String collsCouldSubscribeGet(final SSCollsUserCouldSubscribeGetPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.collsCouldSubscribeGet);
+  public String collsCouldSubscribeGet(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.collsCouldSubscribeGet);
   }
   
   @POST
@@ -374,8 +318,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "changes the label of the tag assigned to entities by given user",
     response = SSTagUserEditRet.class)
-  public String tagEdit(final SSTagUserEditPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.tagEdit);
+  public String tagEdit(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.tagEdit);
   }
   
   @POST
@@ -385,8 +329,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "retrieve the user's root collection",
     response = SSCollUserRootGetRet.class)
-  public String collRootGet(final SSCollUserRootGetPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.collRootGet);
+  public String collRootGet(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.collRootGet);
   }
   
   @POST
@@ -396,8 +340,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "retrieve the parent collection for given user's collection",
     response = SSCollUserParentGetRet.class)
-  public String collParentGet(final SSCollUserParentGetPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.collParentGet);
+  public String collParentGet(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.collParentGet);
   }
   
   @POST
@@ -407,8 +351,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "add a (new) collection or any other entity to given user's collection",
     response = SSCollUserEntryAddRet.class)
-  public String collEntryAdd(final SSCollUserEntryAddPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.collEntryAdd);
+  public String collEntryAdd(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.collEntryAdd);
   }
   
   @POST
@@ -418,8 +362,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "add existing collections or (new) entities to a collection",
     response = SSCollUserEntriesAddRet.class)
-  public String collEntriesAdd(final SSCollUserEntriesAddPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.collEntriesAdd);
+  public String collEntriesAdd(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.collEntriesAdd);
   }
   
   @POST
@@ -429,8 +373,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "change the sequential order of entries in a user's collection",
     response = SSCollUserEntryChangePosRet.class)
-  public String collEntryChangePos(final SSCollUserEntryChangePosPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.collEntryChangePos);
+  public String collEntryChangePos(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.collEntryChangePos);
   }
   
   @POST
@@ -440,8 +384,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "delete an item from a user's collection",
     response = SSCollUserEntryDeleteRet.class)
-  public String collEntryDelete(final SSCollUserEntryDeletePar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.collEntryDelete);
+  public String collEntryDelete(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.collEntryDelete);
   }
   
   @POST
@@ -451,8 +395,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "delete one or more entries from a collection",
     response = SSCollUserEntriesDeleteRet.class)
-  public String collEntriesDelete(final SSCollUserEntriesDeletePar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.collEntriesDelete);
+  public String collEntriesDelete(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.collEntriesDelete);
   }
   
   @POST
@@ -462,8 +406,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "share an entity directly with given users",
     response = SSEntityUserShareRet.class)
-  public String entityShare(final SSEntityUserSharePar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.entityShare);
+  public String entityShare(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.entityShare);
   }
   
   @POST
@@ -473,8 +417,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "retrieve a user's collection with entries",
     response = SSCollUserWithEntriesRet.class)
-  public String collWithEntries(final SSCollUserWithEntriesPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.collWithEntries);
+  public String collWithEntries(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.collWithEntries);
   }
   
   @POST
@@ -484,8 +428,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "retrieve the user's collections with entries",
     response = SSCollsUserWithEntriesRet.class)
-  public String collsWithEntries(final SSCollsUserWithEntriesPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.collsWithEntries);
+  public String collsWithEntries(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.collsWithEntries);
   }
   
   @POST
@@ -495,8 +439,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "retrieve the parent collection order for a user's collection",
     response = SSCollUserHierarchyGetRet.class)
-  public String collHierarchyGet(final SSCollUserHierarchyGetPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.collHierarchyGet);
+  public String collHierarchyGet(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.collHierarchyGet);
   }
    
   @POST
@@ -506,8 +450,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "retrieve the cumulated tags (and their frequencies) for all the sub collections and respective entities",
     response = SSCollUserCumulatedTagsGetRet.class)
-  public String collCumulatedTagsGet(final SSCollUserCumulatedTagsGetPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.collCumulatedTagsGet);
+  public String collCumulatedTagsGet(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.collCumulatedTagsGet);
   }
   
   @POST
@@ -517,8 +461,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "add a textual comment/answer/opinion to a discussion [for given entity] or create a new discussion",
     response = SSDiscUserEntryAddRet.class)
-  public String discEntryAdd(final SSDiscUserEntryAddPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.discEntryAdd);
+  public String discEntryAdd(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.discEntryAdd);
   }
   
   @POST
@@ -528,8 +472,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "retrieve discussions for a certain entity",
     response = SSDiscUserDiscURIsForTargetGetRet.class)
-  public String discURIsForTargetGet(final SSDiscUserDiscURIsForTargetGetPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.discURIsForTargetGet);
+  public String discURIsForTargetGet(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.discURIsForTargetGet);
   }
   
   @POST
@@ -539,8 +483,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "remove a discussion from given user",
     response = SSDiscUserRemoveRet.class)
-  public String discRemove(final SSDiscUserRemovePar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.discRemove);
+  public String discRemove(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.discRemove);
   }
   
   @POST
@@ -550,8 +494,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "retrieve the discussion with its entries",
     response = SSDiscUserWithEntriesRet.class)
-  public String discWithEntriesGet(final SSDiscUserWithEntriesGetPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.discWithEntriesGet);
+  public String discWithEntriesGet(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.discWithEntriesGet);
   }
   
   @POST
@@ -561,8 +505,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "retrieve all discussions given user is allowed to see",
     response = SSDiscsUserAllGetRet.class)
-  public String discsAllGet(final SSDiscsUserAllGetPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.discsAllGet);
+  public String discsAllGet(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.discsAllGet);
   }
   
   @POST
@@ -572,8 +516,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "remove certain attached attributes from an entity",
     response = SSEntityUserDirectlyAdjoinedEntitiesRemoveRet.class)
-  public String entityDirectlyAdjoinedEntitiesRemove(final SSEntityUserDirectlyAdjoinedEntitiesRemovePar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.entityDirectlyAdjoinedEntitiesRemove);
+  public String entityDirectlyAdjoinedEntitiesRemove(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.entityDirectlyAdjoinedEntitiesRemove);
   }
   
   @POST
@@ -583,8 +527,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "retrieve more detailed information for given entity",
     response = SSEntityDescGetRet.class)
-  public String entityDescGet(final SSEntityDescGetPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.entityDescGet);
+  public String entityDescGet(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.entityDescGet);
   }
   
   @POST
@@ -594,8 +538,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "updates/adds given properties for an entity",
     response = SSEntityUserUpdateRet.class)
-  public String entityUpdate(final SSEntityUserUpdatePar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.entityUpdate);
+  public String entityUpdate(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.entityUpdate);
   }
   
   @POST
@@ -605,8 +549,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "retrieve number of minutes left user is allowed to replace / re-upload a file",
     response = SSFileWritingMinutesLeftRet.class)
-  public String fileWritingMinutesLeft(final SSFileWritingMinutesLeftPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.fileWritingMinutesLeft);
+  public String fileWritingMinutesLeft(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.fileWritingMinutesLeft);
   }
   
   @POST
@@ -616,8 +560,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "retrieve automatically usage-based modeled details for given entity",
     response = SSModelUEResourceDetailsRet.class)
-  public String modelUEResourceDetails(final SSModelUEEntityDetailsPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.modelUEResourceDetails);
+  public String modelUEResourceDetails(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.modelUEResourceDetails);
   }
   
   @POST
@@ -627,8 +571,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "retrieve the overall rating (by all users) for given entity",
     response = SSRatingOverallGetRet.class)
-  public String ratingOverallGet(final SSRatingOverallGetPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.ratingOverallGet);
+  public String ratingOverallGet(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.ratingOverallGet);
   }
   
   @POST
@@ -638,8 +582,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "set the user's rating for given entity",
     response = SSRatingUserSetRet.class)
-  public String ratingSet(final SSRatingUserSetPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.ratingSet);
+  public String ratingSet(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.ratingSet);
   }
   
   @POST
@@ -649,8 +593,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "retrieve tag recommendations based on user, entity, tag, time and category combinations",
     response = SSRecommTagsRet.class)
-  public String recommTags(final SSRecommTagsPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.recommTags);
+  public String recommTags(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.recommTags);
   }
   
   @POST
@@ -660,8 +604,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "retrieve entities for tags (currently startTime is not used to retrieve entities)",
     response = SSTagUserEntitiesForTagsGetRet.class)
-  public String tagEntitiesForTagsGet(final SSTagUserEntitiesForTagsGetPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.tagEntitiesForTagsGet);
+  public String tagEntitiesForTagsGet(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.tagEntitiesForTagsGet);
   }
   
   @POST
@@ -671,8 +615,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "retrieve tag assignments",
     response = SSTagsUserGetRet.class)
-  public String tagsGet(final SSTagsUserGetPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.tagsGet);
+  public String tagsGet(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.tagsGet);
   }
   
   @POST
@@ -682,8 +626,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "add a tag within for an entity within given space",
     response = SSTagAddRet.class)
-  public String tagAdd(final SSTagAddPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.tagAdd);
+  public String tagAdd(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.tagAdd);
   }
   
   @POST
@@ -693,8 +637,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "retrieve tag frequencies",
     response = SSTagUserFrequsGetRet.class)
-  public String tagFrequsGet(final SSTagUserFrequsGetPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.tagFrequsGet);
+  public String tagFrequsGet(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.tagFrequsGet);
   }
   
   @POST
@@ -704,8 +648,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "remove tag, user, entity, space combinations",
     response = SSTagsUserRemoveRet.class)
-  public String tagsRemove(final SSTagsUserRemovePar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.tagsRemove);
+  public String tagsRemove(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.tagsRemove);
   }
   
   @POST
@@ -715,8 +659,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "retrieve all users",
     response = SSUserAllRet.class)
-  public String userAll(final SSUserAllPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.userAll);
+  public String userAll(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.userAll);
   }
   
   @POST
@@ -726,8 +670,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "add a usage-based trace, i.e. user event, for entity, user combination",
     response = SSUEAddRet.class)
-  public String uEAdd(final SSUEAddPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.uEAdd);
+  public String uEAdd(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.uEAdd);
   }
   
   @POST
@@ -737,8 +681,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "retrieve user events for user, entity, time combination",
     response = SSUEsGetRet.class)
-  public String uEsGet(final SSUEsGetPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.uEsGet);
+  public String uEsGet(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.uEsGet);
   }
   
   @POST
@@ -748,8 +692,8 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "retrieve given user event",
     response = SSUEGetRet.class)
-  public String uEGet(final SSUEGetPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.uEGet);
+  public String uEGet(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.uEGet);
   }
   
   @POST
@@ -759,9 +703,634 @@ public class SSAdapterRest{
   @ApiOperation(
     value = "retrieve the number of certain user events",
     response = SSUECountGetRet.class)
-  public String uECountGet(final SSUECountGetPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.uECountGet);
+  public String uECountGet(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.uECountGet);
   }
+  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "authCheckCred")
+//  @ApiOperation(
+//    value = "retrieve the authentication key and user's uri for credentials",
+//    response = SSAuthCheckCredRet.class)
+//  public String authCheckCred(final SSAuthCheckCredPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.authCheckCred);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "categoriesPredefinedGet")
+//  @ApiOperation(
+//    value = "get predefined categories",
+//    response = SSCategoriesPredefinedGetRet.class)
+//  public String categoriesPredefinedGet(final SSCategoriesPredefinedGetPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.categoriesPredefinedGet);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "flagsSet")
+//  @ApiOperation(
+//    value = "set flags",
+//    response = SSFlagsUserSetRet.class)
+//  public String flagsSet(final SSFlagsUserSetPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.flagsSet);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "flagsGet")
+//  @ApiOperation(
+//    value = "retrieve flags set",
+//    response = SSFlagsUserGetRet.class)
+//  public String flagsGet(final SSFlagsUserGetPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.flagsGet);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "entityDescsGet")
+//  @ApiOperation(
+//    value = "retrieve more detailed information for given entities of a user",
+//    response = SSEntityDescsGetRet.class)
+//  public String entityDescsGet(final SSEntityDescsGetPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.entityDescsGet);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "dataImportEvernote")
+//  @ApiOperation(
+//    value = "import data from evernote for certain user",
+//    response = SSDataImportEvernoteRet.class)
+//  public String dataImportEvernote(final SSDataImportEvernotePar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.dataImportEvernote);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "activitiesGet")
+//  @ApiOperation(
+//    value = "retrieve activities from within a certain time frame",
+//    response = SSActivitiesUserGetRet.class)
+//  public String activitiesGet(final SSActivitiesUserGetPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.activitiesGet);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "activitiesGet")
+//  public String activitiesGet(final String jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.activitiesGet);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "search")
+//  @ApiOperation(
+//    value = "search for entities",
+//    response = SSSearchRet.class)
+//  public String search(
+//    final SSSearchPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.search);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "systemVersionGet")
+//  @ApiOperation(
+//    value = "retrieve the version of the sss instance",
+//    response = SSSystemVersionGetRet.class)
+//  public String systemVersionGet(final SSSystemVersionGetPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.systemVersionGet);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "entityPublicSet")
+//  @ApiOperation(
+//    value = "set an entity public (make it accessible for everyone)",
+//    response = SSEntityUserPublicSetRet.class)
+//  public String entityPublicSet(final SSEntityUserPublicSetPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.entityPublicSet);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "entityGet")
+//  @ApiOperation(
+//    value = "retrieve general attributes for given entity",
+//    response = SSEntityUserGetRet.class)
+//  public String entityGet(final SSEntityUserGetPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.entityGet);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "entityCircleGet")
+//  @ApiOperation(
+//    value = "retrieve a certain circle",
+//    response = SSEntityUserCircleGetRet.class)
+//  public String entityCircleGet(final SSEntityUserCircleGetPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.entityCircleGet);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "entityCircleCreate")
+//  @ApiOperation(
+//    value = "create a circle and add users and entities to",
+//    response = SSEntityUserCircleCreateRet.class)
+//  public String entityCircleCreate(final SSEntityUserCircleCreatePar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.entityCircleCreate);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "entityUsersToCircleAdd")
+//  @ApiOperation(
+//    value = "add given users to a user-generated circle",
+//    response = SSEntityUserUsersToCircleAddRet.class)
+//  public String entityUsersToCircleAdd(final SSEntityUserUsersToCircleAddPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.entityUsersToCircleAdd);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "entityCopy")
+//  @ApiOperation(
+//    value = "copy an entity and hand it to a user",
+//    response = SSEntityUserCopyRet.class)
+//  public String entityCopy(final SSEntityUserCopyPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.entityCopy);
+//  }
+//
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "entityEntitiesToCircleAdd")
+//  @ApiOperation(
+//    value = "add given entities to a user-generated circle",
+//    response = SSEntityUserEntitiesToCircleAddRet.class)
+//  public String entityEntitiesToCircleAdd(final SSEntityUserEntitiesToCircleAddPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.entityEntitiesToCircleAdd);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "entityUserCirclesGet")
+//  @ApiOperation(
+//    value = "retrieve circles the user is in",
+//    response = SSEntityUserCirclesGetRet.class)
+//  public String entityUserCirclesGet(final SSEntityUserCirclesGetPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.entityUserCirclesGet);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "entityEntityUsersGet")
+//  @ApiOperation(
+//    value = "retrieve users who can access given entity",
+//    response = SSEntityUserEntityUsersGetRet.class)
+//  public String entityEntityUsersGet(final SSEntityUserEntityUsersGetPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.entityEntityUsersGet);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "collsEntityIsInGet")
+//  @ApiOperation(
+//    value = "retrieve all the user's collections given entity is in",
+//    response = SSCollsUserEntityIsInGetRet.class)
+//  public String collsEntityIsInGet(final SSCollsUserEntityIsInGetPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.collsEntityIsInGet);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "collsCouldSubscribeGet")
+//  @ApiOperation(
+//    value = "retrieve a list of all public collections given user could subscribe to",
+//    response = SSCollsUserCouldSubscribeGetRet.class)
+//  public String collsCouldSubscribeGet(final SSCollsUserCouldSubscribeGetPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.collsCouldSubscribeGet);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "tagEdit")
+//  @ApiOperation(
+//    value = "changes the label of the tag assigned to entities by given user",
+//    response = SSTagUserEditRet.class)
+//  public String tagEdit(final SSTagUserEditPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.tagEdit);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "collRootGet")
+//  @ApiOperation(
+//    value = "retrieve the user's root collection",
+//    response = SSCollUserRootGetRet.class)
+//  public String collRootGet(final SSCollUserRootGetPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.collRootGet);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "collParentGet")
+//  @ApiOperation(
+//    value = "retrieve the parent collection for given user's collection",
+//    response = SSCollUserParentGetRet.class)
+//  public String collParentGet(final SSCollUserParentGetPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.collParentGet);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "collEntryAdd")
+//  @ApiOperation(
+//    value = "add a (new) collection or any other entity to given user's collection",
+//    response = SSCollUserEntryAddRet.class)
+//  public String collEntryAdd(final SSCollUserEntryAddPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.collEntryAdd);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "collEntriesAdd")
+//  @ApiOperation(
+//    value = "add existing collections or (new) entities to a collection",
+//    response = SSCollUserEntriesAddRet.class)
+//  public String collEntriesAdd(final SSCollUserEntriesAddPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.collEntriesAdd);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "collEntryChangePos")
+//  @ApiOperation(
+//    value = "change the sequential order of entries in a user's collection",
+//    response = SSCollUserEntryChangePosRet.class)
+//  public String collEntryChangePos(final SSCollUserEntryChangePosPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.collEntryChangePos);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "collEntryDelete")
+//  @ApiOperation(
+//    value = "delete an item from a user's collection",
+//    response = SSCollUserEntryDeleteRet.class)
+//  public String collEntryDelete(final SSCollUserEntryDeletePar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.collEntryDelete);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "collEntriesDelete")
+//  @ApiOperation(
+//    value = "delete one or more entries from a collection",
+//    response = SSCollUserEntriesDeleteRet.class)
+//  public String collEntriesDelete(final SSCollUserEntriesDeletePar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.collEntriesDelete);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "entityShare")
+//  @ApiOperation(
+//    value = "share an entity directly with given users",
+//    response = SSEntityUserShareRet.class)
+//  public String entityShare(final SSEntityUserSharePar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.entityShare);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "collWithEntries")
+//  @ApiOperation(
+//    value = "retrieve a user's collection with entries",
+//    response = SSCollUserWithEntriesRet.class)
+//  public String collWithEntries(final SSCollUserWithEntriesPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.collWithEntries);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "collsWithEntries")
+//  @ApiOperation(
+//    value = "retrieve the user's collections with entries",
+//    response = SSCollsUserWithEntriesRet.class)
+//  public String collsWithEntries(final SSCollsUserWithEntriesPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.collsWithEntries);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "collHierarchyGet")
+//  @ApiOperation(
+//    value = "retrieve the parent collection order for a user's collection",
+//    response = SSCollUserHierarchyGetRet.class)
+//  public String collHierarchyGet(final SSCollUserHierarchyGetPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.collHierarchyGet);
+//  }
+//   
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "collCumulatedTagsGet")
+//  @ApiOperation(
+//    value = "retrieve the cumulated tags (and their frequencies) for all the sub collections and respective entities",
+//    response = SSCollUserCumulatedTagsGetRet.class)
+//  public String collCumulatedTagsGet(final SSCollUserCumulatedTagsGetPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.collCumulatedTagsGet);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "discEntryAdd")
+//  @ApiOperation(
+//    value = "add a textual comment/answer/opinion to a discussion [for given entity] or create a new discussion",
+//    response = SSDiscUserEntryAddRet.class)
+//  public String discEntryAdd(final SSDiscUserEntryAddPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.discEntryAdd);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "discURIsForTargetGet")
+//  @ApiOperation(
+//    value = "retrieve discussions for a certain entity",
+//    response = SSDiscUserDiscURIsForTargetGetRet.class)
+//  public String discURIsForTargetGet(final SSDiscUserDiscURIsForTargetGetPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.discURIsForTargetGet);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "discRemove")
+//  @ApiOperation(
+//    value = "remove a discussion from given user",
+//    response = SSDiscUserRemoveRet.class)
+//  public String discRemove(final SSDiscUserRemovePar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.discRemove);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "discWithEntriesGet")
+//  @ApiOperation(
+//    value = "retrieve the discussion with its entries",
+//    response = SSDiscUserWithEntriesRet.class)
+//  public String discWithEntriesGet(final SSDiscUserWithEntriesGetPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.discWithEntriesGet);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "discsAllGet")
+//  @ApiOperation(
+//    value = "retrieve all discussions given user is allowed to see",
+//    response = SSDiscsUserAllGetRet.class)
+//  public String discsAllGet(final SSDiscsUserAllGetPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.discsAllGet);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "entityDirectlyAdjoinedEntitiesRemove")
+//  @ApiOperation(
+//    value = "remove certain attached attributes from an entity",
+//    response = SSEntityUserDirectlyAdjoinedEntitiesRemoveRet.class)
+//  public String entityDirectlyAdjoinedEntitiesRemove(final SSEntityUserDirectlyAdjoinedEntitiesRemovePar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.entityDirectlyAdjoinedEntitiesRemove);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "entityDescGet")
+//  @ApiOperation(
+//    value = "retrieve more detailed information for given entity",
+//    response = SSEntityDescGetRet.class)
+//  public String entityDescGet(final SSEntityDescGetPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.entityDescGet);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "entityUpdate")
+//  @ApiOperation(
+//    value = "updates/adds given properties for an entity",
+//    response = SSEntityUserUpdateRet.class)
+//  public String entityUpdate(final SSEntityUserUpdatePar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.entityUpdate);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "fileWritingMinutesLeft")
+//  @ApiOperation(
+//    value = "retrieve number of minutes left user is allowed to replace / re-upload a file",
+//    response = SSFileWritingMinutesLeftRet.class)
+//  public String fileWritingMinutesLeft(final SSFileWritingMinutesLeftPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.fileWritingMinutesLeft);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "modelUEResourceDetails")
+//  @ApiOperation(
+//    value = "retrieve automatically usage-based modeled details for given entity",
+//    response = SSModelUEResourceDetailsRet.class)
+//  public String modelUEResourceDetails(final SSModelUEEntityDetailsPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.modelUEResourceDetails);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "ratingOverallGet")
+//  @ApiOperation(
+//    value = "retrieve the overall rating (by all users) for given entity",
+//    response = SSRatingOverallGetRet.class)
+//  public String ratingOverallGet(final SSRatingOverallGetPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.ratingOverallGet);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "ratingSet")
+//  @ApiOperation(
+//    value = "set the user's rating for given entity",
+//    response = SSRatingUserSetRet.class)
+//  public String ratingSet(final SSRatingUserSetPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.ratingSet);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "recommTags")
+//  @ApiOperation(
+//    value = "retrieve tag recommendations based on user, entity, tag, time and category combinations",
+//    response = SSRecommTagsRet.class)
+//  public String recommTags(final SSRecommTagsPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.recommTags);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "tagEntitiesForTagsGet")
+//  @ApiOperation(
+//    value = "retrieve entities for tags (currently startTime is not used to retrieve entities)",
+//    response = SSTagUserEntitiesForTagsGetRet.class)
+//  public String tagEntitiesForTagsGet(final SSTagUserEntitiesForTagsGetPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.tagEntitiesForTagsGet);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "tagsGet")
+//  @ApiOperation(
+//    value = "retrieve tag assignments",
+//    response = SSTagsUserGetRet.class)
+//  public String tagsGet(final SSTagsUserGetPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.tagsGet);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "tagAdd")
+//  @ApiOperation(
+//    value = "add a tag within for an entity within given space",
+//    response = SSTagAddRet.class)
+//  public String tagAdd(final SSTagAddPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.tagAdd);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "tagFrequsGet")
+//  @ApiOperation(
+//    value = "retrieve tag frequencies",
+//    response = SSTagUserFrequsGetRet.class)
+//  public String tagFrequsGet(final SSTagUserFrequsGetPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.tagFrequsGet);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "tagsRemove")
+//  @ApiOperation(
+//    value = "remove tag, user, entity, space combinations",
+//    response = SSTagsUserRemoveRet.class)
+//  public String tagsRemove(final SSTagsUserRemovePar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.tagsRemove);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "userAll")
+//  @ApiOperation(
+//    value = "retrieve all users",
+//    response = SSUserAllRet.class)
+//  public String userAll(final SSUserAllPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.userAll);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "uEAdd")
+//  @ApiOperation(
+//    value = "add a usage-based trace, i.e. user event, for entity, user combination",
+//    response = SSUEAddRet.class)
+//  public String uEAdd(final SSUEAddPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.uEAdd);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "uEsGet")
+//  @ApiOperation(
+//    value = "retrieve user events for user, entity, time combination",
+//    response = SSUEsGetRet.class)
+//  public String uEsGet(final SSUEsGetPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.uEsGet);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "uEGet")
+//  @ApiOperation(
+//    value = "retrieve given user event",
+//    response = SSUEGetRet.class)
+//  public String uEGet(final SSUEGetPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.uEGet);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "uECountGet")
+//  @ApiOperation(
+//    value = "retrieve the number of certain user events",
+//    response = SSUECountGetRet.class)
+//  public String uECountGet(final SSUECountGetPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.uECountGet);
+//  }
   
 //  @GET
 //  @Consumes(MediaType.TEXT_HTML)
@@ -775,9 +1344,9 @@ public class SSAdapterRest{
 //      value = "type",
 //      required = true)
 //    @PathParam(SSVarU.type) 
-//    final SSJSONLDPar input){
+//    final SSJSONLDPar jsonRequ){
 //    
-//    String jsonRequ = "{\"op\":\"" + SSMethU.jsonLD + "\",\"user\":\"" + "mailto:dummyUser" + "/\",\"type\":\"" + input.type + "\",\"key\":\"681V454J1P3H4W3B367BB79615U184N22356I3E\"}";
+//    String jsonRequ = "{\"op\":\"" + SSMethU.jsonLD + "\",\"user\":\"" + "mailto:dummyUser" + "/\",\"type\":\"" + jsonRequ.type + "\",\"key\":\"681V454J1P3H4W3B367BB79615U184N22356I3E\"}";
 //    
 //    return handleStandardJSONRESTCall(jsonRequ, SSMethU.jsonLD);
 //  }

@@ -22,10 +22,6 @@ package at.kc.tugraz.ss.adapter.rest;
 
 import at.kc.tugraz.socialserver.utils.SSMethU;
 import at.kc.tugraz.socialserver.utils.SSStrU;
-import at.kc.tugraz.ss.service.filerepo.datatypes.pars.SSFileCanWritePar;
-import at.kc.tugraz.ss.service.filerepo.datatypes.pars.SSFileExtGetPar;
-import at.kc.tugraz.ss.service.filerepo.datatypes.pars.SSFileSetReaderOrWriterPar;
-import at.kc.tugraz.ss.service.filerepo.datatypes.pars.SSFileUserFileWritesPar;
 import at.kc.tugraz.ss.service.filerepo.datatypes.rets.SSFileCanWriteRet;
 import at.kc.tugraz.ss.service.filerepo.datatypes.rets.SSFileExtGetRet;
 import at.kc.tugraz.ss.service.filerepo.datatypes.rets.SSFileGetEditingFilesRet;
@@ -49,8 +45,8 @@ public class SSAdapterRESTFile{
   @ApiOperation(
     value = "retrieve a file's extension",
     response = SSFileExtGetRet.class)
-  public String fileExtGet(final SSFileExtGetPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.fileExtGet);
+  public String fileExtGet(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.fileExtGet);
   }
   
   @POST
@@ -60,8 +56,8 @@ public class SSAdapterRESTFile{
   @ApiOperation(
     value = "query whether given file can be downloaded with write access",
     response = SSFileCanWriteRet.class)
-  public String fileCanWrite(final SSFileCanWritePar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.fileCanWrite);
+  public String fileCanWrite(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.fileCanWrite);
   }
   
   @POST
@@ -71,8 +67,8 @@ public class SSAdapterRESTFile{
   @ApiOperation(
     value = "set user being writer or reaader for given file",
     response = SSFileSetReaderOrWriterRet.class)
-  public String fileSetReaderOrWriter(final SSFileSetReaderOrWriterPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.fileSetReaderOrWriter);
+  public String fileSetReaderOrWriter(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.fileSetReaderOrWriter);
   }
   
   @POST
@@ -82,7 +78,53 @@ public class SSAdapterRESTFile{
   @ApiOperation(
     value = "retrieve files user currently could replace when uploading respective file again as he is writer",
     response = SSFileGetEditingFilesRet.class)
-  public String fileUserFileWrites(final SSFileUserFileWritesPar input){
-    return SSRestMain.handleStandardJSONRESTCall(input, SSMethU.fileUserFileWrites);
+  public String fileUserFileWrites(final String jsonRequ){
+    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.fileUserFileWrites);
   }
+  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "fileExtGet")
+//  @ApiOperation(
+//    value = "retrieve a file's extension",
+//    response = SSFileExtGetRet.class)
+//  public String fileExtGet(final SSFileExtGetPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.fileExtGet);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "fileCanWrite")
+//  @ApiOperation(
+//    value = "query whether given file can be downloaded with write access",
+//    response = SSFileCanWriteRet.class)
+//  public String fileCanWrite(final SSFileCanWritePar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.fileCanWrite);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "fileSetReaderOrWriter")
+//  @ApiOperation(
+//    value = "set user being writer or reaader for given file",
+//    response = SSFileSetReaderOrWriterRet.class)
+//  public String fileSetReaderOrWriter(final SSFileSetReaderOrWriterPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.fileSetReaderOrWriter);
+//  }
+//  
+//  @POST
+//  @Consumes(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
+//  @Path    (SSStrU.slash + "fileUserFileWrites")
+//  @ApiOperation(
+//    value = "retrieve files user currently could replace when uploading respective file again as he is writer",
+//    response = SSFileGetEditingFilesRet.class)
+//  public String fileUserFileWrites(final SSFileUserFileWritesPar jsonRequ){
+//    return SSRestMain.handleStandardJSONRESTCall(jsonRequ, SSMethU.fileUserFileWrites);
+//  }
+  
+  
 }
